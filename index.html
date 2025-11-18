@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan de Centro del CEIP Bartolomé Flores - Mojácar, Almería. Documento consolidado 2011-2025.">
+    <meta name="keywords" content="CEIP Bartolomé Flores, Mojácar, Plan de Centro, Proyecto Educativo, Andalucía">
+    <meta name="author" content="CEIP Bartolomé Flores">
+    <title>Plan de Centro - CEIP Bartolomé Flores | Mojácar</title>
+    
+    <style>
+        /* ============================================
+           RESET Y CONFIGURACIÓN BÁSICA
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-primary: #006633;
+            --color-secondary: #009966;
+            --color-accent: #00cc88;
+            --color-dark: #004d26;
+            --color-light: #e6f7ff;
+            --color-gray: #f8f9fa;
+            --color-border: #e0e0e0;
+            --color-text: #333;
+            --color-text-light: #555;
+            --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 15px rgba(0,0,0,0.15);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        /* ============================================
+           HEADER
+           ============================================ */
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+        }
+        
+        .header-content .centro-info {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .header-content .version-info {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* ============================================
+           LAYOUT PRINCIPAL
+           ============================================ */
+        .container {
+            display: flex;
+            max-width: 1600px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: var(--shadow-lg);
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: calc(100vh - 250px);
+        }
+        
+        /* ============================================
+           SIDEBAR NAVEGACIÓN
+           ============================================ */
+        .sidebar {
+            width: 320px;
+            background: var(--color-gray);
+            padding: 2rem 1.5rem;
+            border-right: 3px solid var(--color-border);
+            overflow-y: auto;
+            position: sticky;
+            top: 150px;
+            height: calc(100vh - 170px);
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--color-secondary);
+            border-radius: 10px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary);
+        }
+        
+        .sidebar h2 {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--color-secondary);
+            font-weight: 600;
+        }
+        
+        .sidebar nav ul {
+            list-style: none;
+        }
+        
+        .sidebar nav ul li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .sidebar nav ul li a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            display: block;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+        }
+        
+        .sidebar nav ul li a:hover {
+            background: var(--color-secondary);
+            color: white;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-primary);
+            transform: translateX(5px);
+        }
+        
+        .sidebar nav ul li a.active {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            font-weight: 600;
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        .sidebar nav ul li ul {
+            margin-left: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+        .sidebar nav ul li ul li a {
+            font-size: 0.9rem;
+            padding: 0.6rem 0.8rem;
+        }
+        
+        /* ============================================
+           CONTENIDO PRINCIPAL
+           ============================================ */
+        .main-content {
+            flex: 1;
+            padding: 3.5rem;
+            overflow-y: auto;
+            background: white;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .main-content h1 {
+            color: var(--color-primary);
+            font-size: 2.6rem;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid var(--color-secondary);
+            padding-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .main-content h2 {
+            color: var(--color-dark);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            padding-left: 0.5rem;
+            border-left: 5px solid var(--color-secondary);
+        }
+        
+        .main-content h3 {
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .main-content h4 {
+            color: var(--color-secondary);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .main-content p {
+            margin-bottom: 1.3rem;
+            text-align: justify;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+        
+        .main-content ul, .main-content ol {
+            margin-left: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .main-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        
+        .main-content strong {
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+        
+        .main-content em {
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+        
+        /* ============================================
+           TABLAS
+           ============================================ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        table thead {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        }
+        
+        table th {
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        table tbody tr:hover {
+            background: var(--color-light);
+            transition: background 0.3s ease;
+        }
+        
+        /* ============================================
+           CAJAS DESTACADAS
+           ============================================ */
+        .info-box, .warning-box, .success-box, .note-box {
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+            box-shadow: var(--shadow-sm);
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .info-box {
+            background: #e6f7ff;
+            border-left-color: #009966;
+        }
+        
+        .warning-box {
+            background: #fff4e6;
+            border-left-color: #ff9800;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        
+        .note-box {
+            background: #f3e5f5;
+            border-left-color: #9c27b0;
+        }
+        
+        .info-box h4, .warning-box h4, .success-box h4, .note-box h4 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .info-box ul, .warning-box ul, .success-box ul, .note-box ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* ============================================
+           BOTÓN DE SCROLL TO TOP
+           ============================================ */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--color-secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background: var(--color-primary);
+            transform: translateY(-5px);
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 280px;
+            }
+            
+            .main-content {
+                padding: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 3px solid var(--color-border);
+            }
+            
+            .main-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .main-content h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content h2 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .header-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .main-content {
+                padding: 1.5rem 1rem;
+            }
+            
+            .main-content h1 {
+                font-size: 1.7rem;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            table th, table td {
+                padding: 0.8rem;
+            }
+        }
+        
+        /* ============================================
+           IMPRESIÓN
+           ============================================ */
+        @media print {
+            .sidebar, .scroll-to-top, footer {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .main-content {
+                padding: 0;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header>
+        <div class="header-content">
+            <h1>📚 Plan de Centro</h1>
+            <p class="subtitle">Proyecto Educativo del Centro</p>
+            <p class="centro-info"><strong>CEIP Bartolomé Flores</strong> · Código: 04001389</p>
+            <p class="centro-info">C/ Fuensanta s/n · 04638 Mojácar (Almería)</p>
+            <p class="version-info">📄 Versión Consolidada 2011-2025 · Actualización: Noviembre 2024</p>
+        </div>
+    </header>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL
+         ============================================ -->
+    <div class="container">
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside class="sidebar">
+            <h2>📋 Índice de Contenidos</h2>
+            <nav>
+                <ul>
+                    <li><a href="#contexto" class="active">1. El Contexto</a>
+                        <ul>
+                            <li><a href="#ubicacion">1.1 Ubicación geográfica</a></li>
+                            <li><a href="#caracteristicas">1.2 Características del municipio</a></li>
+                            <li><a href="#poblacion">1.3 Población y demografía</a></li>
+                            <li><a href="#economia">1.4 Actividad económica</a></li>
+                            <li><a href="#recursos">1.5 Recursos culturales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#objetivos">2. Objetivos Propios</a>
+                        <ul>
+                            <li><a href="#obj-generales">2.1 Objetivos generales</a></li>
+                            <li><a href="#obj-especificos">2.2 Objetivos específicos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#lineas">3. Líneas de Actuación Pedagógica</a>
+                        <ul>
+                            <li><a href="#linea-calidad">3.1 Calidad educativa</a></li>
+                            <li><a href="#linea-diversidad">3.2 Atención a la diversidad</a></li>
+                            <li><a href="#linea-convivencia">3.3 Convivencia positiva</a></li>
+                            <li><a href="#linea-participacion">3.4 Participación familiar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <!-- ============================================
+                 APARTADO 1: EL CONTEXTO
+                 ============================================ -->
+            <section id="contexto">
+                <h1>1. EL CONTEXTO</h1>
+                
+                <div class="info-box">
+                    <p><strong>📍 Datos de identificación del centro:</strong></p>
+                    <ul>
+                        <li><strong>Denominación:</strong> CEIP Bartolomé Flores</li>
+                        <li><strong>Código de centro:</strong> 04001389</li>
+                        <li><strong>Domicilio:</strong> C/ Fuensanta s/n, 04638 Mojácar (Almería)</li>
+                        <li><strong>Teléfono:</strong> 950 45 19 38</li>
+                        <li><strong>Email:</strong> 04003160.edu@juntadeandalucia.es</li>
+                        <li><strong>Naturaleza:</strong> Centro público de Educación Infantil y Primaria</li>
+                        <li><strong>Titularidad:</strong> Junta de Andalucía - Consejería de Desarrollo Educativo y Formación Profesional</li>
+                    </ul>
+                </div>
+
+                <!-- 1.1 Ubicación geográfica -->
+                <h3 id="ubicacion">1.1. Ubicación geográfica y características del municipio</h3>
+                
+                <h4>Situación geográfica</h4>
+                <p>El CEIP Bartolomé Flores se encuentra ubicado en <strong>Mojácar (Almería)</strong>, municipio situado en la comarca del <strong>Levante Almeriense</strong>, en el extremo oriental de la provincia de Almería, a unos 90 km de la capital provincial.</p>
+                
+                <p>Mojácar está dividido en dos núcleos claramente diferenciados:</p>
+                <ul>
+                    <li><strong>Mojácar Pueblo:</strong> Núcleo histórico situado en lo alto de una colina a 175 metros sobre el nivel del mar. Conserva su estructura urbana de origen andalusí, con calles estrechas y empinadas, casas encaladas y arquitectura tradicional. Declarado <strong>Conjunto Histórico-Artístico en 1975</strong>.</li>
+                    <li><strong>Mojácar Playa:</strong> Núcleo costero de desarrollo turístico moderno, situado a unos 2 km del pueblo. Cuenta con más de <strong>17 kilómetros de costa</strong>, con playas de arena fina y aguas tranquilas. En este núcleo se encuentra el CEIP Bartolomé Flores, lo que facilita el acceso a las familias residentes en la zona costera.</li>
+                </ul>
+
+                <h4 id="caracteristicas">1.1.2. Características del entorno del centro</h4>
+                
+                <div class="success-box">
+                    <h4>Zona de influencia del centro</h4>
+                    <p>El CEIP Bartolomé Flores está ubicado en <strong>Mojácar Playa</strong>, en una zona residencial y turística en constante crecimiento. El centro da servicio educativo principalmente a:</p>
+                    <ul>
+                        <li>Familias residentes en urbanizaciones de Mojácar Playa</li>
+                        <li>Población de Mojácar Pueblo que se desplaza diariamente</li>
+                        <li>Familias de núcleos cercanos (Turre, Garrucha, Carboneras)</li>
+                        <li>Población extranjera residente de forma estable</li>
+                    </ul>
+                </div>
+
+                <p><strong>Características urbanísticas del entorno:</strong></p>
+                <ul>
+                    <li>Zona residencial de baja densidad con predominio de viviendas unifamiliares y urbanizaciones</li>
+                    <li>Infraestructura turística consolidada (hoteles, apartamentos turísticos, restaurantes)</li>
+                    <li>Servicios comerciales y de ocio orientados al turismo</li>
+                    <li>Buena accesibilidad mediante la carretera AL-5107 (antigua N-340)</li>
+                    <li>Proximidad a la costa y recursos naturales del Parque Natural Cabo de Gata-Níjar</li>
+                </ul>
+
+                <h4>Comunicaciones y accesibilidad</h4>
+                <ul>
+                    <li><strong>Por carretera:</strong> Acceso directo desde la AL-5107, que conecta con la Autovía del Mediterráneo (A-7/E-15)</li>
+                    <li><strong>Distancias a núcleos relevantes:</strong>
+                        <ul>
+                            <li>Almería capital: 90 km</li>
+                            <li>Aeropuerto de Almería: 100 km</li>
+                            <li>Murcia: 140 km</li>
+                            <li>Granada: 230 km</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transporte público:</strong> Líneas de autobús que conectan Mojácar con Almería, Garrucha, Turre y otras localidades de la comarca</li>
+                    <li><strong>Accesibilidad al centro:</strong> El centro dispone de accesos peatonales seguros y zona de aparcamiento para familias</li>
+                </ul>
+
+                <!-- 1.1.3 Población y demografía -->
+                <h3 id="poblacion">1.1.3. Población y características demográficas</h3>
+                
+                <h4>Evolución demográfica de Mojácar</h4>
+                <p>Mojácar ha experimentado un <strong>crecimiento demográfico significativo</strong> en las últimas décadas, impulsado por el desarrollo turístico y la llegada de población extranjera.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Población</th>
+                            <th>Tendencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2010</td>
+                            <td>~7.800 hab.</td>
+                            <td>━</td>
+                        </tr>
+                        <tr>
+                            <td>2015</td>
+                            <td>~7.200 hab.</td>
+                            <td>↓ (Crisis económica)</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>~7.900 hab.</td>
+                            <td>↑ (Recuperación)</td>
+                        </tr>
+                        <tr>
+                            <td>2024</td>
+                            <td>~8.400 hab.</td>
+                            <td>↑ (Consolidación)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Fuente: Instituto Nacional de Estadística (INE) - Padrón Municipal de Habitantes</em></p>
+
+                <h4>Estructura demográfica por grupos de edad</h4>
+                <ul>
+                    <li><strong>0-15 años:</strong> ~12% (inferior a la media andaluza del 18%)</li>
+                    <li><strong>16-64 años:</strong> ~62% (población activa)</li>
+                    <li><strong>65 y más años:</strong> ~26% (superior a la media andaluza del 19%)</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ Características demográficas relevantes para el centro:</strong>
+                    <ul>
+                        <li><strong>Envejecimiento progresivo</strong> de la población autóctona</li>
+                        <li><strong>Rejuvenecimiento relativo</strong> por llegada de familias jóvenes extranjeras</li>
+                        <li><strong>Baja natalidad</strong> en población española residente</li>
+                        <li><strong>Población flotante elevada</strong> en temporada estival (puede duplicar la población censada)</li>
+                        <li><strong>Movilidad geográfica</strong> de familias ligada al empleo estacional</li>
+                    </ul>
+                </div>
+
+                <h4>Diversidad cultural y origen</h4>
+                <p>Mojácar presenta una <strong>elevada diversidad cultural</strong>, con presencia significativa de población extranjera, lo que caracteriza profundamente al alumnado del CEIP Bartolomé Flores:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Origen</th>
+                            <th>Porcentaje aproximado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Población española</strong></td>
+                            <td>~68%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Población extranjera total</strong></td>
+                            <td>~32%</td>
+                        </tr>
+                        <tr>
+                            <td>Reino Unido</td>
+                            <td>~40% de los extranjeros</td>
+                        </tr>
+                        <tr>
+                            <td>Alemania</td>
+                            <td>~15% de los extranjeros</td>
+                        </tr>
+                        <tr>
+                            <td>Otros países UE</td>
+                            <td>~25% de los extranjeros</td>
+                        </tr>
+                        <tr>
+                            <td>Marruecos y otros</td>
+                            <td>~20% de los extranjeros</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success-box">
+                    <strong>✅ Impacto educativo de la diversidad cultural:</strong>
+                    <p>Esta composición multicultural tiene un <strong>impacto directo y positivo</strong> en el CEIP Bartolomé Flores:</p>
+                    <ul>
+                        <li>Enriquecimiento del tejido social y cultural del centro</li>
+                        <li>Necesidad de programas específicos de atención a la diversidad lingüística</li>
+                        <li>Desarrollo de competencias interculturales en todo el alumnado</li>
+                        <li>Fomento de valores de respeto, tolerancia y convivencia</li>
+                        <li>Coordinación con servicios de traducción e interpretación</li>
+                    </ul>
+                </div>
+
+                <!-- 1.1.4 Actividad económica -->
+                <h3 id="economia">1.1.4. Actividad económica de la zona</h3>
+                
+                <h4>Principales sectores productivos</h4>
+                
+                <div class="success-box">
+                    <h4>1. TURISMO (Sector dominante)</h4>
+                    <p><strong>Tipología:</strong> Turismo residencial, vacacional y de sol y playa</p>
+                    <p><strong>Infraestructura turística de Mojácar:</strong></p>
+                    <ul>
+                        <li>Más de <strong>17 km de costa</strong> con playas certificadas con Bandera Azul</li>
+                        <li>Aproximadamente <strong>50 establecimientos hoteleros</strong> y apartamentos turísticos</li>
+                        <li>Más de <strong>100 establecimientos de restauración</strong></li>
+                        <li>Campos de golf, club náutico, puertos deportivos</li>
+                        <li>Instalaciones deportivas y de ocio</li>
+                        <li>Oferta cultural y de patrimonio histórico</li>
+                    </ul>
+                    <p><strong>Estacionalidad:</strong> Alta ocupación entre mayo y octubre; descenso significativo en invierno</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4>2. CONSTRUCCIÓN Y ACTIVIDAD INMOBILIARIA</h4>
+                    <p>Sector vinculado al desarrollo turístico y residencial:</p>
+                    <ul>
+                        <li>Promoción de urbanizaciones residenciales</li>
+                        <li>Construcción de viviendas turísticas</li>
+                        <li>Rehabilitación del casco histórico de Mojácar Pueblo</li>
+                        <li>Actividad de mantenimiento y servicios inmobiliarios</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h4>3. AGRICULTURA</h4>
+                    <p>Sector en retroceso pero aún presente:</p>
+                    <ul>
+                        <li><strong>Agricultura intensiva bajo plástico</strong> (tomate, pepino, pimiento)</li>
+                        <li><strong>Agricultura tradicional de secano</strong> (olivo, almendro)</li>
+                        <li>Sector complementario a las actividades turísticas</li>
+                        <li>Empleo principalmente de población envejecida y temporeros</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>4. COMERCIO Y SERVICIOS</h4>
+                    <ul>
+                        <li>Comercio minorista orientado al turismo</li>
+                        <li>Servicios de hostelería y restauración</li>
+                        <li>Servicios personales y profesionales</li>
+                        <li>Actividades de ocio y entretenimiento</li>
+                    </ul>
+                </div>
+
+                <h4>Impacto de la actividad económica en las familias del centro</h4>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Características laborales de las familias:</strong>
+                    <ul>
+                        <li><strong>Empleo en hostelería y servicios:</strong> Horarios laborales irregulares, turnos partidos, trabajo en fines de semana y festivos</li>
+                        <li><strong>Estacionalidad del empleo:</strong> Afecta a la estabilidad económica familiar y puede generar situaciones de vulnerabilidad en temporada baja</li>
+                        <li><strong>Pluriempleo:</strong> Común en familias del sector servicios para complementar ingresos</li>
+                        <li><strong>Movilidad laboral:</strong> Familias que se trasladan según ofertas de empleo temporal</li>
+                        <li><strong>Nivel de ingresos variable:</strong> Desde situación económica holgada (profesionales, empresarios) hasta situaciones de vulnerabilidad (empleo precario estacional)</li>
+                        <li><strong>Disponibilidad de las familias:</strong> Los horarios laborales condicionan la participación en actividades escolares y el acompañamiento educativo</li>
+                    </ul>
+                </div>
+
+                <p><strong>Implicaciones educativas:</strong></p>
+                <ul>
+                    <li>Necesidad de flexibilidad en horarios de tutoría y reuniones con familias</li>
+                    <li>Importancia de servicios complementarios (comedor, aula matinal, actividades extraescolares)</li>
+                    <li>Atención a situaciones de vulnerabilidad socioeconómica</li>
+                    <li>Coordinación con servicios sociales municipales</li>
+                    <li>Programas de apoyo y refuerzo educativo para alumnado con dificultades de acompañamiento familiar</li>
+                </ul>
+
+                <!-- 1.1.5 Recursos culturales -->
+                <h3 id="recursos">1.1.5. Recursos culturales, deportivos y educativos del entorno</h3>
+                
+                <h4>A) Patrimonio histórico y cultural</h4>
+                
+                <div class="success-box">
+                    <strong>Mojácar Pueblo - Patrimonio Histórico:</strong>
+                    <ul>
+                        <li><strong>Casco histórico declarado Conjunto Histórico-Artístico</strong> (1975)</li>
+                        <li>Arquitectura tradicional de origen andalusí</li>
+                        <li>Mirador del Castillo</li>
+                        <li>Iglesia de Santa María (s. XVI)</li>
+                        <li>Fuente Mora (leyenda del Mojaquero)</li>
+                        <li>Plaza del Ayuntamiento</li>
+                        <li>Centro de Arte Moderno y Contemporáneo</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Tradiciones y cultura local:</strong></p>
+                <ul>
+                    <li><strong>Fiestas patronales</strong> en honor a San Agustín (agosto)</li>
+                    <li><strong>Fiestas de Moros y Cristianos</strong> (junio)</li>
+                    <li><strong>Semana Santa</strong></li>
+                    <li><strong>Día de la Cruz</strong> (3 de mayo)</li>
+                    <li><strong>Mercadillo artesanal</strong> semanal</li>
+                    <li>Eventos culturales estivales (conciertos, teatro, cine al aire libre)</li>
+                    <li>Encuentros gastronómicos y ferias temáticas</li>
+                </ul>
+
+                <h4>B) Recursos deportivos</h4>
+                <p><strong>Instalaciones municipales y deportivas:</strong></p>
+                <ul>
+                    <li><strong>Polideportivo municipal</strong> (pabellón cubierto)</li>
+                    <li>Pistas deportivas al aire libre</li>
+                    <li>Campos de fútbol</li>
+                    <li><strong>Club Náutico de Mojácar</strong></li>
+                    <li>Rutas de senderismo y cicloturismo señalizadas</li>
+                    <li>Campos de golf cercanos</li>
+                    <li>Instalaciones deportivas en urbanizaciones privadas</li>
+                </ul>
+                
+                <p><strong>Actividades deportivas habituales en la zona:</strong></p>
+                <ul>
+                    <li>Deportes náuticos (vela, windsurf, paddle surf, kayak)</li>
+                    <li>Golf (varios campos en la comarca)</li>
+                    <li>Fútbol, baloncesto, pádel</li>
+                    <li>Senderismo y ciclismo</li>
+                    <li>Actividades de playa y en la naturaleza</li>
+                </ul>
+
+                <h4>C) Bibliotecas y recursos educativos</h4>
+                <ul>
+                    <li><strong>Biblioteca Pública Municipal "Bartolomé Flores":</strong> Ubicada en Mojácar Pueblo, con servicio de préstamo, actividades de fomento de la lectura y sala de estudio</li>
+                    <li><strong>Casa de la Cultura:</strong> Espacio para actividades culturales, talleres y exposiciones</li>
+                    <li><strong>Centro Cultural de Mojácar Playa:</strong> Actividades extraescolares, cursos y eventos culturales</li>
+                    <li><strong>Ludoteca municipal:</strong> Actividades lúdicas y educativas para la infancia</li>
+                </ul>
+
+                <h4>D) Servicios sociales, sanitarios y asistenciales</h4>
+                <ul>
+                    <li><strong>Centro de Salud de Mojácar:</strong> Atención primaria, pediatría, enfermería</li>
+                    <li><strong>Servicios Sociales Comunitarios:</strong> Dependientes del Ayuntamiento, atienden necesidades sociales</li>
+                    <li><strong>Centro de Información a la Mujer</strong></li>
+                    <li><strong>Asociaciones y ONGs:</strong> Cruz Roja, Cáritas, asociaciones vecinales, AMPA</li>
+                    <li><strong>Programa de Familia:</strong> Apoyo psicosocial y orientación familiar</li>
+                </ul>
+
+                <h4>E) Asociaciones y tejido asociativo</h4>
+                <ul>
+                    <li><strong>AMPA del CEIP Bartolomé Flores:</strong> Muy activa y participativa en la vida del centro</li>
+                    <li>Asociaciones culturales y folclóricas</li>
+                    <li>Asociaciones deportivas</li>
+                    <li>Asociaciones de comerciantes</li>
+                    <li>Comunidad extranjera organizada (British Society, asociaciones alemanas, holandesas)</li>
+                    <li>Asociaciones de jubilados y pensionistas</li>
+                    <li>Asociaciones de vecinos</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>📌 CONCLUSIÓN sobre el contexto:</strong></p>
+                    <p>El CEIP Bartolomé Flores se encuentra en un entorno privilegiado desde el punto de vista geográfico y turístico, con una población multicultural y diversa, lo que enriquece enormemente la vida del centro pero también plantea retos específicos en materia de integración, atención a la diversidad lingüística y coordinación con las familias. La actividad económica basada en el turismo condiciona la disponibilidad de las familias y la estabilidad de la matrícula, siendo necesario adaptar la organización del centro a estas particularidades.</p>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 APARTADO 2: OBJETIVOS PROPIOS
+                 ============================================ -->
+            <section id="objetivos">
+                <h1>2. OBJETIVOS PROPIOS PARA LA MEJORA DEL RENDIMIENTO ESCOLAR</h1>
+                
+                <div class="info-box">
+                    <p><strong>Fundamentación normativa:</strong></p>
+                    <p>De acuerdo con el <strong>Decreto 328/2010, de 13 de julio</strong>, por el que se aprueba el Reglamento Orgánico de las escuelas infantiles de segundo ciclo, de los colegios de educación primaria, de los colegios de educación infantil y primaria, y de los centros públicos específicos de educación especial (BOJA 16-07-2010), y con la <strong>Orden de 20 de agosto de 2010</strong>, por la que se regula la organización y el funcionamiento de las escuelas infantiles de segundo ciclo, de los colegios de educación primaria, de los colegios de educación infantil y primaria y de los centros públicos específicos de educación especial, así como el horario de los centros, del alumnado y del profesorado (BOJA 30-08-2010).</p>
+                </div>
+
+                <h2 id="obj-generales">2.1. Objetivos generales del centro</h2>
+                
+                <p>El CEIP Bartolomé Flores establece los siguientes <strong>objetivos generales</strong> que orientan toda su acción educativa, organizativa y de gestión:</p>
+
+                <h3>A) Mejora del rendimiento académico y desarrollo competencial</h3>
+                <ol>
+                    <li><strong>Mejorar los resultados académicos del alumnado</strong> en todas las áreas del currículo, con especial atención a las <strong>competencias clave</strong>: competencia en comunicación lingüística, competencia matemática y competencias básicas en ciencia y tecnología.</li>
+                    
+                    <li><strong>Desarrollar el hábito lector y la comprensión lectora</strong> como elementos transversales a todas las áreas, fomentando el gusto por la lectura y el uso funcional de la biblioteca escolar.</li>
+                    
+                    <li><strong>Potenciar el desarrollo de la competencia digital</strong> del alumnado, promoviendo el uso responsable, crítico y creativo de las tecnologías de la información y la comunicación.</li>
+                    
+                    <li><strong>Impulsar el aprendizaje de lenguas extranjeras</strong>, especialmente del inglés, mediante metodologías activas y comunicativas, aprovechando la diversidad lingüística del entorno.</li>
+                    
+                    <li><strong>Fomentar el pensamiento crítico, la creatividad y la capacidad de aprender a aprender</strong>, preparando al alumnado para afrontar los retos de una sociedad en constante cambio.</li>
+                </ol>
+
+                <h3>B) Atención a la diversidad e inclusión educativa</h3>
+                <ol start="6">
+                    <li><strong>Garantizar una atención educativa de calidad a todo el alumnado</strong>, respetando sus ritmos de aprendizaje, características personales, necesidades educativas y contextos familiares.</li>
+                    
+                    <li><strong>Desarrollar programas específicos de atención a la diversidad</strong> que permitan la detección temprana de dificultades de aprendizaje y la intervención educativa ajustada a cada caso.</li>
+                    
+                    <li><strong>Facilitar la integración del alumnado de incorporación tardía al sistema educativo</strong> y del alumnado extranjero, promoviendo el aprendizaje de la lengua española y la integración intercultural.</li>
+                    
+                    <li><strong>Atender al alumnado con necesidades específicas de apoyo educativo</strong> (NEAE), garantizando los recursos, adaptaciones y apoyos necesarios para su desarrollo integral.</li>
+                    
+                    <li><strong>Identificar y desarrollar las capacidades del alumnado con altas capacidades intelectuales</strong>, ofreciendo respuestas educativas diferenciadas y enriquecedoras.</li>
+                </ol>
+
+                <h3>C) Convivencia, valores y educación emocional</h3>
+                <ol start="11">
+                    <li><strong>Promover un clima de convivencia positiva</strong> basado en el respeto mutuo, la tolerancia, la igualdad y la resolución pacífica de conflictos.</li>
+                    
+                    <li><strong>Educar en valores democráticos y de ciudadanía</strong>, fomentando el respeto a los derechos humanos, la diversidad cultural, la igualdad de género y la solidaridad.</li>
+                    
+                    <li><strong>Desarrollar la educación emocional del alumnado</strong>, trabajando el autoconocimiento, la autorregulación, las habilidades sociales y la empatía.</li>
+                    
+                    <li><strong>Prevenir el acoso escolar y cualquier forma de violencia</strong>, estableciendo protocolos de actuación y promoviendo relaciones interpersonales saludables.</li>
+                    
+                    <li><strong>Fomentar hábitos de vida saludable</strong>, promoviendo la actividad física, la alimentación equilibrada y el bienestar físico y emocional.</li>
+                </ol>
+
+                <h3>D) Participación de la comunidad educativa</h3>
+                <ol start="16">
+                    <li><strong>Fomentar la participación activa de las familias</strong> en la vida del centro, estableciendo cauces de comunicación fluidos y promoviendo su implicación en el proceso educativo.</li>
+                    
+                    <li><strong>Potenciar el funcionamiento del AMPA</strong> como elemento dinamizador de la comunidad educativa y colaborador en actividades complementarias y extraescolares.</li>
+                    
+                    <li><strong>Establecer vínculos con el entorno social, cultural e institucional</strong> del municipio, aprovechando los recursos disponibles y participando en proyectos comunitarios.</li>
+                    
+                    <li><strong>Promover la participación democrática del alumnado</strong> en la vida del centro, potenciando el funcionamiento de las asambleas de aula y los órganos de representación estudiantil.</li>
+                </ol>
+
+                <h3>E) Mejora de la práctica docente y desarrollo profesional</h3>
+                <ol start="20">
+                    <li><strong>Fomentar el trabajo en equipo del profesorado</strong>, coordinando las actuaciones docentes y promoviendo el intercambio de experiencias y buenas prácticas.</li>
+                    
+                    <li><strong>Impulsar la formación permanente del profesorado</strong>, especialmente en metodologías activas, competencia digital, atención a la diversidad y convivencia.</li>
+                    
+                    <li><strong>Desarrollar proyectos de innovación educativa</strong> que mejoren la calidad de la enseñanza y fomenten la motivación del alumnado.</li>
+                    
+                    <li><strong>Promover la evaluación interna del centro</strong> como herramienta de mejora continua, analizando resultados y estableciendo propuestas de mejora.</li>
+                </ol>
+
+                <h3>F) Organización y gestión del centro</h3>
+                <ol start="24">
+                    <li><strong>Optimizar la organización del centro</strong>, distribuyendo los recursos humanos, materiales y espacios de forma eficiente y equitativa.</li>
+                    
+                    <li><strong>Garantizar el funcionamiento adecuado de los órganos de coordinación docente</strong> (ETCP, equipos de ciclo, equipos docentes), facilitando tiempos y espacios para la coordinación.</li>
+                    
+                    <li><strong>Mejorar las instalaciones y recursos del centro</strong>, manteniendo los espacios en condiciones óptimas y dotándolos de materiales didácticos actualizados.</li>
+                    
+                    <li><strong>Impulsar la transformación digital del centro</strong>, mejorando la infraestructura tecnológica y promoviendo el uso educativo de las TIC.</li>
+                </ol>
+
+                <!-- 2.2 Objetivos específicos -->
+                <h2 id="obj-especificos">2.2. Objetivos específicos para la mejora del rendimiento escolar</h2>
+                
+                <p>Para el desarrollo de los objetivos generales anteriores, el CEIP Bartolomé Flores establece los siguientes <strong>objetivos específicos</strong>, concretados en <strong>líneas de actuación prioritarias</strong>:</p>
+
+                <h3>PRIORIDAD 1: Mejora de la competencia en comunicación lingüística</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Incrementar el nivel de comprensión lectora del alumnado en todas las etapas educativas.</li>
+                        <li>Mejorar la expresión oral y escrita del alumnado, atendiendo a la corrección ortográfica, coherencia y cohesión textual.</li>
+                        <li>Fomentar el hábito lector y el gusto por la lectura mediante actividades motivadoras y funcionales.</li>
+                        <li>Potenciar el uso de la biblioteca escolar como recurso para el aprendizaje y el disfrute de la lectura.</li>
+                        <li>Desarrollar programas específicos de mejora de la lectoescritura en Educación Infantil y Primer Ciclo de Primaria.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 2: Mejora de la competencia matemática</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Mejorar la resolución de problemas matemáticos, desarrollando estrategias de razonamiento lógico.</li>
+                        <li>Potenciar el cálculo mental y el dominio de las operaciones básicas.</li>
+                        <li>Fomentar el uso de metodologías manipulativas y experimentales en el aprendizaje de las matemáticas.</li>
+                        <li>Desarrollar la competencia en resolución de situaciones problemáticas de la vida cotidiana.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 3: Atención a la diversidad lingüística y cultural</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Garantizar la integración del alumnado extranjero y de incorporación tardía mediante programas de inmersión lingüística.</li>
+                        <li>Desarrollar programas de ATAL (Aula Temporal de Adaptación Lingüística) para el alumnado con desconocimiento del español.</li>
+                        <li>Fomentar el respeto y la valoración de la diversidad cultural como elemento enriquecedor.</li>
+                        <li>Coordinar actuaciones con servicios de traducción e interpretación para la comunicación con familias extranjeras.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 4: Prevención del absentismo y fracaso escolar</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Detectar y prevenir situaciones de absentismo escolar, estableciendo protocolos de actuación coordinados con servicios sociales.</li>
+                        <li>Reducir el porcentaje de alumnado que no alcanza los objetivos mínimos en áreas instrumentales.</li>
+                        <li>Establecer medidas de refuerzo educativo y apoyo personalizado para el alumnado con dificultades de aprendizaje.</li>
+                        <li>Promover la motivación y el interés del alumnado mediante metodologías activas y participativas.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 5: Impulso de la competencia digital</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Integrar las TIC en todas las áreas del currículo como herramienta de aprendizaje.</li>
+                        <li>Desarrollar la competencia digital del alumnado en todas sus dimensiones (alfabetización digital, uso responsable, creación de contenidos).</li>
+                        <li>Formar al profesorado en el uso didáctico de las TIC y en metodologías innovadoras.</li>
+                        <li>Mejorar la dotación tecnológica del centro y garantizar su mantenimiento.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 6: Mejora de la convivencia escolar</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Reducir el número de conductas contrarias a las normas de convivencia.</li>
+                        <li>Desarrollar programas de mediación escolar y resolución pacífica de conflictos.</li>
+                        <li>Implementar estrategias de educación emocional y habilidades sociales en todas las aulas.</li>
+                        <li>Establecer protocolos de prevención y actuación ante el acoso escolar.</li>
+                    </ol>
+                </div>
+
+                <h3>PRIORIDAD 7: Implicación de las familias</h3>
+                
+                <div class="success-box">
+                    <h4>Objetivos específicos:</h4>
+                    <ol>
+                        <li>Incrementar la participación de las familias en las actividades del centro.</li>
+                        <li>Establecer compromisos educativos y de convivencia con las familias del alumnado que presenta dificultades.</li>
+                        <li>Facilitar la comunicación centro-familias mediante plataformas digitales y reuniones periódicas.</li>
+                        <li>Promover la formación de las familias en temas educativos relevantes (uso responsable de tecnologías, hábitos de estudio, etc.).</li>
+                    </ol>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>📊 Evaluación y seguimiento de los objetivos:</strong></p>
+                    <p>Los objetivos propios del centro serán evaluados anualmente mediante los procedimientos de <strong>autoevaluación interna</strong>, analizando indicadores de logro, resultados académicos, índices de convivencia y grado de satisfacción de la comunidad educativa. Los resultados de esta evaluación se recogerán en la <strong>Memoria Final de Curso</strong> y servirán de base para establecer <strong>propuestas de mejora</strong> que se incorporarán al Plan de Centro del curso siguiente.</p>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 APARTADO 3: LÍNEAS DE ACTUACIÓN PEDAGÓGICA
+                 ============================================ -->
+            <section id="lineas">
+                <h1>3. LÍNEAS GENERALES DE ACTUACIÓN PEDAGÓGICA</h1>
+                
+                <div class="info-box">
+                    <p><strong>Introducción:</strong></p>
+                    <p>Las <strong>líneas generales de actuación pedagógica</strong> constituyen el marco de referencia que orienta las decisiones pedagógicas, organizativas y de gestión del CEIP Bartolomé Flores. Estas líneas se fundamentan en los <strong>principios educativos</strong> recogidos en la legislación vigente (LOE-LOMLOE) y en las <strong>señas de identidad</strong> del centro, respondiendo a las características y necesidades de nuestro contexto educativo.</p>
+                </div>
+
+                <p>El CEIP Bartolomé Flores establece las siguientes <strong>líneas generales de actuación pedagógica</strong>, que impregnan toda la acción educativa del centro:</p>
+
+                <!-- Línea 1 -->
+                <h2 id="linea-calidad">3.1. LÍNEA 1: Calidad educativa y mejora continua</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Equidad y excelencia:</strong> Garantizar una educación de calidad para todo el alumnado, independientemente de su origen, capacidades o circunstancias personales, promoviendo al mismo tiempo la excelencia académica y el desarrollo máximo del potencial de cada alumno y alumna.</li>
+                    
+                    <li><strong>Cultura de la evaluación y la mejora:</strong> Impulsar la evaluación continua de los procesos educativos, organizativos y de gestión del centro, estableciendo indicadores de calidad y promoviendo la reflexión sobre la práctica docente como motor de mejora.</li>
+                    
+                    <li><strong>Innovación metodológica:</strong> Fomentar metodologías activas, participativas y motivadoras que sitúen al alumnado en el centro del proceso de aprendizaje, tales como el aprendizaje basado en proyectos (ABP), aprendizaje cooperativo, gamificación, flipped classroom, etc.</li>
+                    
+                    <li><strong>Desarrollo competencial:</strong> Orientar el proceso educativo hacia el desarrollo de las <strong>competencias clave</strong> establecidas en el currículo, garantizando aprendizajes funcionales, transferibles y aplicables a situaciones reales.</li>
+                    
+                    <li><strong>Uso educativo de las TIC:</strong> Integrar las Tecnologías de la Información y la Comunicación en todas las áreas del currículo, desarrollando la competencia digital del alumnado y del profesorado.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Elaboración y revisión anual de las <strong>programaciones didácticas</strong> adaptadas al contexto del centro.</li>
+                        <li>Coordinación de contenidos, metodologías y criterios de evaluación entre ciclos y etapas.</li>
+                        <li>Uso sistemático de la <strong>plataforma educativa Séneca</strong> y otras herramientas digitales.</li>
+                        <li>Desarrollo de <strong>proyectos interdisciplinares</strong> que integren diferentes áreas del currículo.</li>
+                        <li>Realización de <strong>evaluaciones iniciales, continuas y finales</strong> que permitan la toma de decisiones fundamentadas.</li>
+                        <li>Análisis de los <strong>resultados de las pruebas externas</strong> (ESCALA, pruebas de diagnóstico) para establecer propuestas de mejora.</li>
+                        <li>Implementación del <strong>Plan de Formación del Profesorado</strong> vinculado a las necesidades detectadas.</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 2 -->
+                <h2 id="linea-diversidad">3.2. LÍNEA 2: Atención a la diversidad e inclusión educativa</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Educación inclusiva:</strong> Garantizar el acceso, la permanencia y el éxito educativo de todo el alumnado, eliminando barreras y proporcionando los apoyos necesarios.</li>
+                    
+                    <li><strong>Personalización del aprendizaje:</strong> Adaptar el proceso de enseñanza-aprendizaje a las características, necesidades, ritmos y estilos de aprendizaje de cada alumno y alumna.</li>
+                    
+                    <li><strong>Detección e intervención temprana:</strong> Identificar de forma precoz las dificultades de aprendizaje y las necesidades educativas específicas, estableciendo medidas de intervención ajustadas.</li>
+                    
+                    <li><strong>Diversidad lingüística y cultural:</strong> Valorar la diversidad lingüística y cultural del alumnado como elemento enriquecedor, facilitando la integración del alumnado extranjero y de incorporación tardía.</li>
+                    
+                    <li><strong>Altas capacidades:</strong> Identificar al alumnado con altas capacidades intelectuales y proporcionarle una respuesta educativa diferenciada mediante programas de enriquecimiento y ampliación curricular.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Implementación de <strong>medidas generales de atención a la diversidad</strong>: refuerzo educativo, agrupamientos flexibles, desdobles, apoyo en grupos ordinarios.</li>
+                        <li>Desarrollo de <strong>programas específicos</strong>: ATAL (Aula Temporal de Adaptación Lingüística), PT (Pedagogía Terapéutica), AL (Audición y Lenguaje).</li>
+                        <li>Elaboración de <strong>adaptaciones curriculares</strong> significativas y no significativas según las necesidades del alumnado NEAE.</li>
+                        <li>Realización de <strong>evaluaciones psicopedagógicas</strong> en coordinación con el Equipo de Orientación Educativa (EOE).</li>
+                        <li>Desarrollo de <strong>planes de acogida</strong> para el alumnado de nueva incorporación, especialmente alumnado extranjero.</li>
+                        <li>Uso del <strong>DUA (Diseño Universal para el Aprendizaje)</strong> en el diseño de situaciones de aprendizaje accesibles a todo el alumnado.</li>
+                        <li>Coordinación con <strong>servicios externos</strong>: servicios sociales, salud mental, asociaciones de apoyo, etc.</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 3 -->
+                <h2 id="linea-convivencia">3.3. LÍNEA 3: Convivencia positiva y educación en valores</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Convivencia democrática y pacífica:</strong> Fomentar un clima escolar basado en el respeto mutuo, la tolerancia, la cooperación y la resolución pacífica de conflictos.</li>
+                    
+                    <li><strong>Educación en valores:</strong> Desarrollar valores democráticos, de ciudadanía responsable, igualdad, solidaridad, justicia y respeto a los derechos humanos.</li>
+                    
+                    <li><strong>Educación emocional:</strong> Promover el desarrollo de la inteligencia emocional del alumnado, trabajando el autoconocimiento, la autorregulación emocional, las habilidades sociales y la empatía.</li>
+                    
+                    <li><strong>Igualdad de género:</strong> Educar en igualdad de oportunidades entre mujeres y hombres, previniendo la violencia de género y fomentando la coeducación.</li>
+                    
+                    <li><strong>Prevención del acoso escolar:</strong> Establecer protocolos de detección, prevención e intervención ante situaciones de acoso escolar o ciberacoso.</li>
+                    
+                    <li><strong>Participación democrática:</strong> Fomentar la participación del alumnado en la vida del centro, potenciando las asambleas de aula, los delegados/as de clase y los órganos de representación estudiantil.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Aplicación del <strong>Plan de Convivencia</strong> del centro, con normas claras, consensuadas y conocidas por toda la comunidad educativa.</li>
+                        <li>Desarrollo de programas de <strong>educación emocional</strong> en todas las aulas (identificación y gestión de emociones, habilidades sociales).</li>
+                        <li>Implementación de estrategias de <strong>mediación escolar</strong> y resolución pacífica de conflictos.</li>
+                        <li>Celebración de <strong>efemérides educativas</strong>: Día de la Paz, Día de la Mujer, Día contra el Acoso Escolar, Día de la Diversidad Cultural, etc.</li>
+                        <li>Desarrollo del <strong>Plan de Igualdad de Género</strong>, promoviendo modelos no sexistas y corresponsabilidad.</li>
+                        <li>Protocolos de actuación ante situaciones de <strong>acoso escolar, maltrato infantil, violencia de género</strong>.</li>
+                        <li>Asambleas de aula para trabajar la convivencia, la participación y la toma de decisiones democráticas.</li>
+                        <li>Coordinación con el <strong>Equipo de Orientación</strong> para el seguimiento de casos de conflictividad o dificultades emocionales.</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 4 -->
+                <h2 id="linea-participacion">3.4. LÍNEA 4: Participación de la comunidad educativa y apertura al entorno</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Participación de las familias:</strong> Considerar a las familias como parte esencial de la comunidad educativa, promoviendo su participación activa y su implicación en el proceso educativo de sus hijos e hijas.</li>
+                    
+                    <li><strong>Comunicación fluida y bidireccional:</strong> Establecer canales de comunicación eficaces entre centro y familias, utilizando plataformas digitales, tutorías, reuniones y otros medios.</li>
+                    
+                    <li><strong>AMPA como dinamizadora:</strong> Potenciar el papel del AMPA como elemento dinamizador de la comunidad educativa y colaborador en actividades complementarias y extraescolares.</li>
+                    
+                    <li><strong>Apertura al entorno:</strong> Establecer vínculos de colaboración con instituciones, asociaciones y recursos del entorno (Ayuntamiento, biblioteca municipal, asociaciones culturales y deportivas, servicios sociales, etc.).</li>
+                    
+                    <li><strong>Coordinación intercentros:</strong> Mantener coordinación con los centros de Educación Secundaria de la zona para facilitar la transición del alumnado.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Uso de <strong>iPasen</strong> y otras plataformas digitales para la comunicación diaria con las familias.</li>
+                        <li>Realización de <strong>tutorías individuales y colectivas</strong> con periodicidad establecida.</li>
+                        <li>Suscripción de <strong>compromisos educativos y de convivencia</strong> con las familias del alumnado que presenta dificultades.</li>
+                        <li>Organización de <strong>escuelas de familias</strong> sobre temas educativos de interés (uso responsable de tecnologías, inteligencia emocional, hábitos de estudio, etc.).</li>
+                        <li>Fomento de la participación de las familias en el <strong>Consejo Escolar</strong> y en las actividades del centro.</li>
+                        <li>Colaboración con el <strong>Ayuntamiento de Mojácar</strong> en actividades culturales, deportivas y de promoción de la salud.</li>
+                        <li>Uso de recursos del entorno: biblioteca municipal, centro de salud, servicios sociales, centro cultural.</li>
+                        <li>Coordinación con el <strong>IES de la zona</strong> para el tránsito del alumnado de 6º de Primaria a 1º de ESO.</li>
+                        <li>Participación en <strong>programas y proyectos educativos</strong> de ámbito local, autonómico y nacional.</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 5 -->
+                <h2>3.5. LÍNEA 5: Desarrollo de la competencia en comunicación lingüística</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Transversalidad de la lengua:</strong> Considerar la competencia en comunicación lingüística como eje vertebrador del aprendizaje en todas las áreas del currículo.</li>
+                    
+                    <li><strong>Fomento de la lectura:</strong> Desarrollar el hábito lector y el gusto por la lectura como elementos esenciales para el aprendizaje permanente.</li>
+                    
+                    <li><strong>Expresión oral y escrita:</strong> Trabajar de forma sistemática la expresión oral (hablar en público, debates, exposiciones) y la expresión escrita (corrección ortográfica, coherencia, cohesión textual).</li>
+                    
+                    <li><strong>Biblioteca escolar:</strong> Potenciar la biblioteca escolar como centro de recursos para el aprendizaje, la información y el ocio lector.</li>
+                    
+                    <li><strong>Plurilingüismo:</strong> Fomentar el aprendizaje de lenguas extranjeras, especialmente del inglés, mediante metodologías comunicativas y funcionales.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Desarrollo del <strong>Plan de Lectura y Biblioteca</strong> del centro.</li>
+                        <li>Dedicación diaria de <strong>tiempo específico a la lectura</strong> en todas las aulas.</li>
+                        <li>Actividades de <strong>animación a la lectura</strong> y encuentros con autores.</li>
+                        <li>Trabajar la <strong>expresión oral</strong> mediante exposiciones, debates, dramatizaciones, recitales de poesía.</li>
+                        <li>Uso de <strong>ortografía interactiva</strong> y técnicas de autocorrección ortográfica.</li>
+                        <li>Desarrollo de proyectos lingüísticos transversales que integren lengua castellana e inglés.</li>
+                        <li>Coordinación entre tutores/as y especialistas de inglés para el desarrollo de metodologías AICLE (Aprendizaje Integrado de Contenidos y Lenguas Extranjeras).</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 6 -->
+                <h2>3.6. LÍNEA 6: Promoción de hábitos de vida saludable</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Educación para la salud:</strong> Promover hábitos de vida saludable relacionados con la alimentación equilibrada, la actividad física regular y el bienestar emocional.</li>
+                    
+                    <li><strong>Prevención de adicciones:</strong> Desarrollar programas de prevención del consumo de tabaco, alcohol y otras sustancias nocivas.</li>
+                    
+                    <li><strong>Uso responsable de tecnologías:</strong> Educar en el uso responsable de las tecnologías, previniendo adicciones y problemas derivados del uso excesivo de dispositivos digitales.</li>
+                    
+                    <li><strong>Educación afectivo-sexual:</strong> Desarrollar programas de educación afectivo-sexual adaptados a cada etapa educativa.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Participación en el programa <strong>"Creciendo en Salud"</strong> de la Junta de Andalucía.</li>
+                        <li>Promoción del <strong>desayuno saludable</strong> y campañas de alimentación equilibrada.</li>
+                        <li>Desarrollo de actividades de <strong>educación física</strong> y promoción del deporte escolar.</li>
+                        <li>Colaboración con el <strong>Centro de Salud</strong> de Mojácar en actividades de promoción de la salud.</li>
+                        <li>Jornadas informativas sobre <strong>uso responsable de tecnologías</strong> y prevención de riesgos digitales.</li>
+                        <li>Coordinación con servicios externos para la prevención de adicciones.</li>
+                    </ul>
+                </div>
+
+                <!-- Línea 7 -->
+                <h2>3.7. LÍNEA 7: Educación ambiental y sostenibilidad</h2>
+                
+                <h3>Principios rectores:</h3>
+                <ul>
+                    <li><strong>Conciencia ecológica:</strong> Fomentar actitudes de respeto, cuidado y protección del medio ambiente.</li>
+                    
+                    <li><strong>Desarrollo sostenible:</strong> Educar para un desarrollo sostenible, promoviendo hábitos de consumo responsable, reducción de residuos, reciclaje y ahorro energético.</li>
+                    
+                    <li><strong>Conocimiento del entorno natural:</strong> Aprovechar el entorno natural privilegiado de Mojácar (parque natural, costa, espacios naturales) como recurso educativo.</li>
+                </ul>
+
+                <h3>Concreciones prácticas:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>Participación en programas de <strong>Educación Ambiental</strong> (Aldea, Ecoescuelas, etc.).</li>
+                        <li>Desarrollo de proyectos de <strong>reciclaje</strong> y gestión de residuos en el centro.</li>
+                        <li>Realización de <strong>salidas al entorno natural</strong> (Parque Natural Cabo de Gata-Níjar, río Aguas, espacios protegidos).</li>
+                        <li>Campañas de <strong>ahorro energético</strong> y uso responsable del agua.</li>
+                        <li>Celebración de <strong>efemérides ambientales</strong>: Día Mundial del Medio Ambiente, Día del Árbol, Día Mundial del Agua, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>📌 Coherencia entre objetivos y líneas de actuación:</strong></p>
+                    <p>Las <strong>líneas generales de actuación pedagógica</strong> desarrolladas en este apartado están en plena coherencia con los <strong>objetivos propios del centro</strong> recogidos en el apartado anterior. Todas las actuaciones educativas, organizativas y de gestión del CEIP Bartolomé Flores se orientan hacia la consecución de estos objetivos, garantizando una educación de calidad, inclusiva, participativa y adaptada al contexto sociocultural del municipio de Mojácar.</p>
+                </div>
+            </section>
+
+            <!-- Nota final informativa -->
+            <div class="info-box" style="margin-top: 4rem;">
+                <h3>📄 Información sobre este documento</h3>
+                <p><strong>Estado del documento:</strong> Este archivo presenta los <strong>tres primeros apartados</strong> del Plan de Centro del CEIP Bartolomé Flores, consolidados a partir de las versiones elaboradas entre 2011 y 2025.</p>
+                <p><strong>Apartados incluidos:</strong></p>
+                <ol>
+                    <li>El Contexto</li>
+                    <li>Objetivos propios para la mejora del rendimiento escolar</li>
+                    <li>Líneas generales de actuación pedagógica</li>
+                </ol>
+                <p><strong>Próximos apartados:</strong> Los apartados restantes del Plan de Centro (apartados 4 a 17) se encontrarán disponibles en documentos complementarios o en próximas actualizaciones.</p>
+                <p><strong>Normativa de referencia:</strong> Decreto 328/2010, Orden de 20 de agosto de 2010, LOMLOE, normativa autonómica vigente.</p>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>CEIP Bartolomé Flores</strong> · Código: 04001389 · Mojácar (Almería)</p>
+        <p>📧 04003160.edu@juntadeandalucia.es · ☎️ 950 45 19 38</p>
+        <p>Plan de Centro - Versión Consolidada 2011-2025 · Actualización: Noviembre 2024</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Este documento ha sido elaborado conforme a la normativa vigente: Decreto 328/2010, Orden de 20 de agosto de 2010, LOMLOE.
+        </p>
+    </footer>
+
+    <!-- BOTÓN SCROLL TO TOP -->
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        ▲
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // =======================================
+        // SMOOTH SCROLL PARA ENLACES DE NAVEGACIÓN
+        // =======================================
+        document.querySelectorAll('.sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Actualizar clase active
+                    document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // =======================================
+        // BOTÓN SCROLL TO TOP
+        // =======================================
+        const scrollButton = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // =======================================
+        // DETECCIÓN DE SECCIÓN ACTIVA AL SCROLL
+        // =======================================
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.sidebar nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
