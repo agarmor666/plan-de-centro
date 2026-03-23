@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Centro · CEIP Bartolomé Flores</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1a5c38;
+    --verde-medio: #2d7a50;
+    --verde-claro: #e8f4ed;
+    --verde-hover: #f0f8f3;
+    --acento: #c8832a;
+    --acento-claro: #fdf3e3;
+    --texto: #1e2d22;
+    --texto-suave: #4a5e51;
+    --gris-borde: #d4e2d9;
+    --gris-fondo: #f6f9f7;
+    --blanco: #ffffff;
+    --sombra: 0 2px 16px rgba(26,92,56,0.09);
+    --sombra-card: 0 4px 24px rgba(26,92,56,0.12);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    --radius: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--texto);
+    background: var(--blanco);
+    line-height: 1.65;
+  }
+
+  /* ── TOP NAV ── */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+  }
+  .topnav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    gap: 2rem;
+  }
+  .topnav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .topnav-logo .logo-icon {
+    width: 42px; height: 42px;
+    background: var(--verde);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .topnav-logo .logo-icon svg { width: 22px; height: 22px; fill: white; }
+  .topnav-logo .logo-text { line-height: 1.2; }
+  .topnav-logo .logo-text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--verde);
+  }
+  .topnav-logo .logo-text span {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    font-weight: 400;
+  }
+  .topnav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+  .topnav-links a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .topnav-links a:hover, .topnav-links a.active {
+    background: var(--verde-claro);
+    color: var(--verde);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(155deg, var(--verde) 0%, var(--verde-medio) 60%, #3a9468 100%);
+    color: white;
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  .hero-inner { position: relative; max-width: 800px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    opacity: 0.88;
+    font-weight: 300;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+  /* ── SECTION: EXPLORAR ── */
+  .section-explorar {
+    background: var(--gris-fondo);
+    padding: 5rem 2rem;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .section-title h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--texto);
+    font-weight: 600;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--blanco);
+    border-radius: var(--radius);
+    border: 1px solid var(--gris-borde);
+    padding: 1.75rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--verde);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: var(--sombra-card);
+    border-color: var(--verde-medio);
+    transform: translateY(-2px);
+  }
+  .card:hover::after { transform: scaleX(1); }
+
+  .card-num {
+    width: 44px; height: 44px;
+    min-width: 44px;
+    background: var(--verde-claro);
+    color: var(--verde);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .card-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+  .card-body p {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .card-arrow {
+    margin-left: auto;
+    align-self: center;
+    color: var(--verde-medio);
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    font-size: 1.1rem;
+  }
+  .card:hover .card-arrow { opacity: 1; transform: translateX(3px); }
+
+  /* ── EXTRA CARD: sugerir ── */
+  .card.card-sugerir {
+    border-style: dashed;
+    background: var(--verde-hover);
+  }
+  .card.card-sugerir .card-num {
+    background: var(--verde-claro);
+  }
+
+  /* ── QUÉ ES ── */
+  .section-que-es {
+    padding: 5rem 2rem;
+    background: var(--blanco);
+  }
+  .que-es-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .pillar {
+    padding: 1.75rem 1.25rem;
+    background: var(--gris-fondo);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--verde);
+  }
+  .pillar-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  .pillar h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .pillar p {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    line-height: 1.6;
+  }
+
+  /* ── CONTENIDO CAPÍTULOS ── */
+  .section-chapter {
+    display: none;
+    padding: 4rem 2rem 5rem;
+    background: var(--blanco);
+    animation: fadeUp 0.35s ease;
+  }
+  .section-chapter.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .chapter-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .chapter-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--verde);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--verde-claro);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .chapter-back:hover { background: var(--gris-borde); }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--gris-borde);
+  }
+  .chapter-num-big {
+    width: 64px; height: 64px; min-width: 64px;
+    background: var(--verde);
+    color: white;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .chapter-header-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--texto);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .chapter-header-text .chapter-desc {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    font-weight: 400;
+  }
+
+  .chapter-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--verde);
+    margin: 2.25rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--verde-claro);
+  }
+  .chapter-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--texto);
+    margin: 1.5rem 0 0.5rem;
+  }
+  .chapter-content p {
+    font-size: 0.975rem;
+    color: var(--texto);
+    margin-bottom: 0.9rem;
+    line-height: 1.75;
+  }
+  .chapter-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .chapter-content ul li {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    margin-bottom: 0.4rem;
+    line-height: 1.65;
+  }
+  .chapter-content ul li strong { color: var(--texto); }
+
+  .info-box {
+    background: var(--verde-claro);
+    border-left: 4px solid var(--verde);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+  }
+  .info-box strong { color: var(--verde); }
+
+  .acento-box {
+    background: var(--acento-claro);
+    border-left: 4px solid var(--acento);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #5a3a0a;
+  }
+
+  .competencia-chip {
+    display: inline-block;
+    background: var(--verde);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin: 0.15rem;
+  }
+
+  .objetivo-item {
+    background: var(--gris-fondo);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 0.85rem;
+    border: 1px solid var(--gris-borde);
+  }
+  .objetivo-item .obj-id {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+  }
+  .objetivo-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .valor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.85rem;
+    margin: 1.5rem 0;
+  }
+  .valor-item {
+    background: var(--verde-claro);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--gris-borde);
+  }
+  .valor-item .valor-titulo {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--verde);
+    margin-bottom: 0.3rem;
+  }
+  .valor-item p {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── NORMATIVA ── */
+  .norma-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .norma-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    background: var(--gris-fondo);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    border: 1px solid var(--gris-borde);
+  }
+  .norma-item .norma-tag {
+    background: var(--verde);
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 1px;
+  }
+
+  /* ── NAV CAPÍTULOS ── */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gris-borde);
+    gap: 1rem;
+  }
+  .chapter-nav-btn {
+    background: var(--verde-claro);
+    color: var(--verde);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .chapter-nav-btn:hover {
+    background: var(--verde);
+    color: white;
+    border-color: var(--verde);
+  }
+  .chapter-nav-btn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--texto);
+    color: rgba(255,255,255,0.75);
+    padding: 3rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+  footer h4 {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+  }
+  footer p, footer li {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 0.4rem; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  footer ul li a:hover { color: white; }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .topnav-links { display: none; }
+    .hero { padding: 4rem 1.25rem 3.5rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .chapter-nav { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ TOP NAV ══ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="topnav-logo" href="#" onclick="showHome()">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <strong>Plan de Centro</strong>
+        <span>CEIP Bartolomé Flores · Mojácar</span>
+      </div>
+    </a>
+    <ul class="topnav-links">
+      <li><a href="#" onclick="showHome()" id="nav-inicio" class="active">Inicio</a></li>
+      <li><a href="#que-es" onclick="showHome(); setTimeout(()=>document.getElementById('que-es').scrollIntoView({behavior:'smooth'}),100)">Sobre el Plan</a></li>
+      <li><a href="#" onclick="showChapter(0)">Proyecto Educativo</a></li>
+      <li><a href="#" onclick="showChapter(5)">Plan de Convivencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HOME ══ -->
+<div id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Versión Consolidada 2011–2025</span>
+      <h1>Plan de Centro<br>CEIP Bartolomé Flores</h1>
+      <p class="hero-sub">
+        Documento institucional que recoge el Proyecto Educativo, el Reglamento de Organización y Funcionamiento y el Proyecto de Gestión del centro, actualizado con la normativa vigente LOMLOE.
+      </p>
+      <div class="hero-meta">
+        <span>📍 Mojácar, Almería</span>
+        <span>🏫 Código: 41001389</span>
+        <span>📅 Vigencia: 2024–2025 y siguientes</span>
+        <span>✅ Aprobado por Consejo Escolar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORAR POR CAPÍTULOS -->
+  <section class="section-explorar">
+    <div class="section-title">
+      <h2>Explorar por capítulos</h2>
+    </div>
+    <p class="section-sub">17 capítulos del Plan de Centro con toda la normativa actualizada</p>
+
+    <div class="cards-grid">
+
+      <div class="card" onclick="showChapter(0)">
+        <div class="card-num">1</div>
+        <div class="card-body">
+          <h3>Contexto del Centro</h3>
+          <p>Características del entorno, datos del centro, alumnado y comunidad educativa de Mojácar.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(1)">
+        <div class="card-num">2</div>
+        <div class="card-body">
+          <h3>Objetivos y Competencias Clave</h3>
+          <p>Objetivos propios del centro para el desarrollo de las ocho competencias clave (LOMLOE).</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(2)">
+        <div class="card-num">3</div>
+        <div class="card-body">
+          <h3>Líneas Pedagógicas Generales</h3>
+          <p>Metodologías activas, enfoques de enseñanza-aprendizaje y señas de identidad pedagógica.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(3)">
+        <div class="card-num">4</div>
+        <div class="card-body">
+          <h3>Coordinación Curricular</h3>
+          <p>Concreción de contenidos por etapas, coordinación de ciclos y equipos docentes.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(4)">
+        <div class="card-num">5</div>
+        <div class="card-body">
+          <h3>Evaluación y Promoción</h3>
+          <p>Procedimientos, criterios de evaluación continua, calificación y criterios de promoción.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(5)">
+        <div class="card-num">6</div>
+        <div class="card-body">
+          <h3>Plan de Convivencia</h3>
+          <p>Normas de convivencia, protocolos de actuación, resolución de conflictos y mediación escolar.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(6)">
+        <div class="card-num">7</div>
+        <div class="card-body">
+          <h3>Atención a la Diversidad</h3>
+          <p>Medidas de atención al alumnado con NEAE, alumnado extranjero y altas capacidades.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(7)">
+        <div class="card-num">8</div>
+        <div class="card-body">
+          <h3>Refuerzo y Recuperación</h3>
+          <p>Organización de actividades de refuerzo educativo y planes de recuperación de aprendizajes.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(8)">
+        <div class="card-num">9</div>
+        <div class="card-body">
+          <h3>Plan de Orientación y Tutoría</h3>
+          <p>Acción tutorial, orientación personal, académica y vocacional. Coordinación con el EOE.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(9)">
+        <div class="card-num">10</div>
+        <div class="card-body">
+          <h3>Planes Estratégicos</h3>
+          <p>Plan Digital, Plan Lector, Plan de Igualdad, Proyectos de mejora y programas europeos.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(10)">
+        <div class="card-num">11</div>
+        <div class="card-body">
+          <h3>Formación del Profesorado</h3>
+          <p>Plan de formación en centro, necesidades formativas detectadas y líneas de mejora docente.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(11)">
+        <div class="card-num">12</div>
+        <div class="card-body">
+          <h3>Organización del Tiempo Escolar</h3>
+          <p>Criterios para la distribución del tiempo, horarios generales y uso de espacios.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(12)">
+        <div class="card-num">13</div>
+        <div class="card-body">
+          <h3>Evaluación Interna</h3>
+          <p>Procedimientos de autoevaluación del centro, indicadores de calidad y mejora continua.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(13)">
+        <div class="card-num">14</div>
+        <div class="card-body">
+          <h3>Agrupamientos y Tutorías</h3>
+          <p>Criterios pedagógicos para la asignación de tutorías y organización de grupos.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(14)">
+        <div class="card-num">15</div>
+        <div class="card-body">
+          <h3>Programaciones Didácticas</h3>
+          <p>Criterios para la elaboración, revisión y publicación de las programaciones por áreas.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(15)">
+        <div class="card-num">16</div>
+        <div class="card-body">
+          <h3>ROF – Reglamento de Organización</h3>
+          <p>Estructura organizativa, órganos de gobierno, funciones y normas de funcionamiento.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card" onclick="showChapter(16)">
+        <div class="card-num">17</div>
+        <div class="card-body">
+          <h3>Proyecto de Gestión</h3>
+          <p>Criterios de gestión económica, uso de instalaciones, contrataciones y rendición de cuentas.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="card card-sugerir" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+        <div class="card-num" style="background:var(--acento-claro);color:var(--acento);">+</div>
+        <div class="card-body">
+          <h3>Proponer modificación</h3>
+          <p>¿Detectas algún aspecto a mejorar? Envíanos tu propuesta para la próxima actualización.</p>
+        </div>
+        <span class="card-arrow" style="color:var(--acento)">→</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUÉ ES EL PLAN DE CENTRO -->
+  <section class="section-que-es" id="que-es">
+    <div class="que-es-inner">
+      <div class="section-title">
+        <h2>¿Qué es el Plan de Centro?</h2>
+      </div>
+      <p class="section-sub">Marco institucional que orienta toda la vida del CEIP Bartolomé Flores</p>
+
+      <div style="max-width:700px; margin: 0 auto 0; text-align:center;">
+        <p style="font-size:1rem; color:var(--texto-suave); line-height:1.8;">
+          El Plan de Centro es el documento institucional de referencia del CEIP Bartolomé Flores. Establece la identidad pedagógica del centro, regula su organización y funcionamiento, y fija los criterios de gestión. Recoge la versión consolidada de todas las modificaciones aprobadas por el Consejo Escolar entre 2011 y 2025, actualizada a la normativa vigente LOMLOE.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-icon">📘</div>
+          <h3>Proyecto Educativo</h3>
+          <p>Define los objetivos, valores e identidad pedagógica del centro. Es el núcleo del Plan de Centro.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📋</div>
+          <h3>ROF</h3>
+          <p>Regula la organización y funcionamiento del centro: órganos, normas de convivencia y procedimientos.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💶</div>
+          <h3>Proyecto de Gestión</h3>
+          <p>Establece los criterios para la gestión económica, uso de instalaciones y rendición de cuentas.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚖️</div>
+          <h3>Base legal</h3>
+          <p>Amparado en la LOMLOE, el Decreto 328/2010 y las Instrucciones anuales de la Junta de Andalucía.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section style="background:var(--gris-fondo); padding:5rem 2rem;" id="contacto">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <div class="section-title"><h2>Contacto</h2></div>
+      <p style="color:var(--texto-suave); margin: 0.75rem 0 2.5rem; font-size:0.975rem;">
+        Para consultas sobre el Plan de Centro, propuestas de modificación o acceso a documentación oficial.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:0.85rem; text-align:left; background:white; border-radius:var(--radius); padding:2rem; box-shadow:var(--sombra); border:1px solid var(--gris-borde);">
+        <div style="display:flex; gap:0.85rem; align-items:center; font-size:0.9rem;">
+          <span style="font-size:1.2rem;">📍</span>
+          <span><strong>Dirección:</strong> C/ de la Escuela, s/n · 04638 Mojácar (Almería)</span>
+        </div>
+        <div style="display:flex; gap:0.85rem; align-items:center; font-size:0.9rem;">
+          <span style="font-size:1.2rem;">📞</span>
+          <span><strong>Teléfono:</strong> 950 478 XXX</span>
+        </div>
+        <div style="display:flex; gap:0.85rem; align-items:center; font-size:0.9rem;">
+          <span style="font-size:1.2rem;">✉️</span>
+          <span><strong>Email:</strong> 04001389.edu@juntadeandalucia.es</span>
+        </div>
+        <div style="display:flex; gap:0.85rem; align-items:center; font-size:0.9rem;">
+          <span style="font-size:1.2rem;">🏛️</span>
+          <span><strong>Consejería:</strong> Educación y Deporte de la Junta de Andalucía</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ══ CAPÍTULOS ══ -->
+
+<!-- CAP 1: CONTEXTO -->
+<div class="section-chapter" id="chapter-0">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">1</div>
+      <div class="chapter-header-text">
+        <h1>Contexto del Centro</h1>
+        <p class="chapter-desc">Características del entorno, del alumnado y de la comunidad educativa del CEIP Bartolomé Flores.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+
+      <h2>1.1. Datos de Identificación del Centro</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag">CENTRO</span><span><strong>Denominación:</strong> CEIP Bartolomé Flores</span></div>
+        <div class="norma-item"><span class="norma-tag">CÓDIGO</span><span>04001389</span></div>
+        <div class="norma-item"><span class="norma-tag">UBICACIÓN</span><span>Mojácar, Almería (Andalucía)</span></div>
+        <div class="norma-item"><span class="norma-tag">ETAPAS</span><span>Educación Infantil (2.º ciclo) y Educación Primaria</span></div>
+        <div class="norma-item"><span class="norma-tag">LÍNEAS</span><span>Centro de dos líneas por curso</span></div>
+        <div class="norma-item"><span class="norma-tag">TITULARIDAD</span><span>Pública. Consejería de Educación y Deporte (Junta de Andalucía)</span></div>
+      </div>
+
+      <h2>1.2. Entorno Socioeducativo</h2>
+      <p>El CEIP Bartolomé Flores se ubica en el municipio de Mojácar, localidad del litoral almeriense con una importante presencia de población extranjera residente, que alcanza aproximadamente el 40% de la matrícula total del centro.</p>
+      <p>El entorno socioeconómico es de nivel medio-bajo, con familias que trabajan principalmente en el sector servicios, hostelería y agricultura. La actividad turística condiciona los ritmos familiares y la disponibilidad para la participación en la vida escolar.</p>
+
+      <div class="info-box">
+        <strong>Dato significativo:</strong> La diversidad cultural y lingüística del alumnado —con presencia de familias procedentes de más de 15 países— constituye a la vez un reto pedagógico y un valor enriquecedor que impregna la identidad del centro.
+      </div>
+
+      <h2>1.3. Características del Alumnado</h2>
+      <ul>
+        <li>Alumnado de alta diversidad cultural: familias españolas, británicas, alemanas, marroquíes, rumanas y latinoamericanas.</li>
+        <li>Presencia significativa de alumnado cuya lengua materna no es el español, lo que requiere medidas específicas de acogida e integración lingüística.</li>
+        <li>Porcentaje de alumnado con necesidades específicas de apoyo educativo (NEAE) superior a la media provincial.</li>
+        <li>Alta rotación de matrícula a lo largo del curso por los movimientos migratorios familiares.</li>
+      </ul>
+
+      <h2>1.4. Recursos Humanos</h2>
+      <p>El centro cuenta con el siguiente equipo humano para el desarrollo de su proyecto educativo:</p>
+      <ul>
+        <li><strong>Equipo Directivo:</strong> Director/a, Jefe/a de Estudios y Secretario/a.</li>
+        <li><strong>Claustro de Profesorado:</strong> Tutores/as de Infantil y Primaria, especialistas en Inglés, Educación Física, Música, Religión y Audición y Lenguaje.</li>
+        <li><strong>Personal de Apoyo:</strong> PT (Pedagogía Terapéutica), AL (Audición y Lenguaje), ATAL (Aulas Temporales de Adaptación Lingüística).</li>
+        <li><strong>Orientación:</strong> Equipo de Orientación Educativa de zona (EOE).</li>
+        <li><strong>PAS:</strong> Personal de administración y servicios, conserje y personal de limpieza.</li>
+      </ul>
+
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn disabled">← Capítulo anterior</span>
+      <span class="chapter-nav-btn" onclick="showChapter(1)">Capítulo 2: Objetivos y Competencias →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 2: OBJETIVOS Y COMPETENCIAS -->
+<div class="section-chapter" id="chapter-1">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">2</div>
+      <div class="chapter-header-text">
+        <h1>Objetivos Propios y Competencias Clave</h1>
+        <p class="chapter-desc">Marco competencial LOMLOE y objetivos específicos del CEIP Bartolomé Flores.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+
+      <h2>2.1. Marco Normativo Vigente</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag">LOE/LOMLOE</span><span>Ley Orgánica 2/2006 modificada por la Ley Orgánica 3/2020, de 29 de diciembre</span></div>
+        <div class="norma-item"><span class="norma-tag">LEA</span><span>Ley 17/2007, de 10 de diciembre, de Educación de Andalucía</span></div>
+        <div class="norma-item"><span class="norma-tag">RD 95/2022</span><span>Currículo de Educación Infantil</span></div>
+        <div class="norma-item"><span class="norma-tag">RD 157/2022</span><span>Currículo de Educación Primaria</span></div>
+        <div class="norma-item"><span class="norma-tag">D 100/2023</span><span>Educación Infantil en Andalucía</span></div>
+        <div class="norma-item"><span class="norma-tag">D 101/2023</span><span>Educación Primaria en Andalucía</span></div>
+      </div>
+
+      <h2>2.2. Las Ocho Competencias Clave</h2>
+      <p>El currículo LOMLOE organiza el aprendizaje en torno a ocho competencias clave que el alumnado debe desarrollar a lo largo de la enseñanza obligatoria:</p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin: 1rem 0 1.5rem;">
+        <span class="competencia-chip">CCL – Comunicación Lingüística</span>
+        <span class="competencia-chip">CP – Competencia Plurilingüe</span>
+        <span class="competencia-chip">STEM – Ciencia y Tecnología</span>
+        <span class="competencia-chip">CD – Competencia Digital</span>
+        <span class="competencia-chip">CPSAA – Aprender a Aprender</span>
+        <span class="competencia-chip">CC – Competencia Ciudadana</span>
+        <span class="competencia-chip">CE – Competencia Emprendedora</span>
+        <span class="competencia-chip">CCEC – Conciencia Cultural</span>
+      </div>
+
+      <h2>2.3. Objetivos Generales del Centro</h2>
+
+      <div class="objetivo-item">
+        <div class="obj-id">OG.1 — Desarrollo competencial integral</div>
+        <p>Garantizar el desarrollo pleno de las competencias clave en todo el alumnado, atendiendo a la diversidad y a las diferencias individuales, para asegurar el éxito educativo.</p>
+        <div><span class="competencia-chip" style="background:var(--acento)">Todas las competencias</span></div>
+      </div>
+
+      <div class="objetivo-item">
+        <div class="obj-id">OG.2 — Comunicación en español</div>
+        <p>Impulsar el dominio de la competencia comunicativa en lengua española, con atención especial al alumnado cuya lengua materna es diferente, a través del Aula ATAL y medidas de apoyo específicas.</p>
+        <div><span class="competencia-chip">CCL</span><span class="competencia-chip">CP</span></div>
+      </div>
+
+      <div class="objetivo-item">
+        <div class="obj-id">OG.3 — Competencia digital</div>
+        <p>Desarrollar la competencia digital del alumnado mediante el uso seguro, crítico y creativo de las tecnologías, en el marco del Plan de Transformación Digital Educativa.</p>
+        <div><span class="competencia-chip">CD</span></div>
+      </div>
+
+      <div class="objetivo-item">
+        <div class="obj-id">OG.4 — Convivencia e inclusión</div>
+        <p>Promover una convivencia escolar basada en el respeto, la empatía y la resolución pacífica de conflictos, fomentando la inclusión y la interculturalidad como valores del centro.</p>
+        <div><span class="competencia-chip">CC</span><span class="competencia-chip">CPSAA</span></div>
+      </div>
+
+      <div class="objetivo-item">
+        <div class="obj-id">OG.5 — Sostenibilidad y ciudadanía global</div>
+        <p>Educar en la sostenibilidad, el respeto al medio ambiente y la responsabilidad ciudadana, en coherencia con los Objetivos de Desarrollo Sostenible (ODS).</p>
+        <div><span class="competencia-chip">CC</span><span class="competencia-chip">STEM</span><span class="competencia-chip">CCEC</span></div>
+      </div>
+
+      <h2>2.4. Valores Fundamentales del Centro</h2>
+      <div class="valor-grid">
+        <div class="valor-item"><div class="valor-titulo">🌍 Inclusión</div><p>Igualdad de oportunidades y éxito educativo para todo el alumnado.</p></div>
+        <div class="valor-item"><div class="valor-titulo">🤝 Interculturalidad</div><p>La diversidad cultural como fuente de enriquecimiento mutuo.</p></div>
+        <div class="valor-item"><div class="valor-titulo">⚖️ Equidad</div><p>Eliminar desigualdades derivadas del origen socioeconómico.</p></div>
+        <div class="valor-item"><div class="valor-titulo">💬 Convivencia</div><p>Relaciones basadas en el respeto y el diálogo.</p></div>
+        <div class="valor-item"><div class="valor-titulo">🚀 Innovación</div><p>Metodologías activas y formación permanente del profesorado.</p></div>
+        <div class="valor-item"><div class="valor-titulo">🌱 Sostenibilidad</div><p>Respeto al medio ambiente y consumo responsable.</p></div>
+        <div class="valor-item"><div class="valor-titulo">♀♂ Igualdad</div><p>Eliminar estereotipos de género y promover la igualdad efectiva.</p></div>
+        <div class="valor-item"><div class="valor-titulo">✨ Creatividad</div><p>Estimular la imaginación y el pensamiento divergente.</p></div>
+      </div>
+
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(0)">← Capítulo 1: Contexto</span>
+      <span class="chapter-nav-btn" onclick="showChapter(2)">Capítulo 3: Líneas Pedagógicas →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 3: LÍNEAS PEDAGÓGICAS -->
+<div class="section-chapter" id="chapter-2">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">3</div>
+      <div class="chapter-header-text">
+        <h1>Líneas Generales de Actuación Pedagógica</h1>
+        <p class="chapter-desc">Principios metodológicos, enfoques de enseñanza y señas de identidad pedagógica del centro.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>3.1. Principios Metodológicos</h2>
+      <p>La acción educativa del CEIP Bartolomé Flores se sustenta en los siguientes principios pedagógicos, coherentes con el enfoque competencial de la LOMLOE:</p>
+      <ul>
+        <li><strong>Aprendizaje significativo y funcional:</strong> Partir de los conocimientos previos del alumnado y conectar los aprendizajes con situaciones reales y cotidianas.</li>
+        <li><strong>Enfoque competencial:</strong> Orientar la enseñanza hacia el desarrollo de las competencias clave, mediante situaciones de aprendizaje contextualizadas y el uso de distintos lenguajes.</li>
+        <li><strong>Atención a la diversidad:</strong> Adaptar la metodología a los diferentes ritmos, estilos y necesidades del alumnado, garantizando la inclusión efectiva.</li>
+        <li><strong>Aprendizaje cooperativo:</strong> Fomentar el trabajo en equipo, la colaboración entre iguales y la construcción conjunta del conocimiento.</li>
+        <li><strong>Integración de las TIC:</strong> Incorporar las tecnologías digitales como herramienta de aprendizaje, comunicación y creación.</li>
+        <li><strong>Evaluación formativa:</strong> Concebir la evaluación como proceso de mejora continua, con retroalimentación al alumnado y a las familias.</li>
+      </ul>
+
+      <h2>3.2. Metodologías Prioritarias</h2>
+      <div class="info-box">
+        <strong>Nota:</strong> Las metodologías seleccionadas responden a las características específicas del alumnado del centro y a los objetivos propios establecidos en el Capítulo 2.
+      </div>
+      <ul>
+        <li><strong>Aprendizaje Basado en Proyectos (ABP):</strong> Desarrollo de proyectos interdisciplinares que integran distintas áreas de conocimiento en torno a una situación-problema real.</li>
+        <li><strong>Trabajo por rincones y talleres:</strong> Especialmente en Educación Infantil y 1.er ciclo de Primaria, favoreciendo la autonomía y el aprendizaje activo.</li>
+        <li><strong>Rutinas de pensamiento:</strong> Estrategias para desarrollar el pensamiento crítico, creativo y metacognitivo.</li>
+        <li><strong>Lectura compartida y animación lectora:</strong> 30 minutos diarios de lectura en Primaria como tiempo no negociable.</li>
+        <li><strong>Flipped Classroom:</strong> Uso progresivo en ciclos superiores para invertir el proceso de instrucción.</li>
+      </ul>
+
+      <h2>3.3. Organización del Aula</h2>
+      <p>El agrupamiento flexible del alumnado, la organización por equipos de trabajo y la disposición del espacio de aula se adaptan a las necesidades de cada situación de aprendizaje, alejándose del modelo exclusivamente frontal.</p>
+      <p>Se promueve el uso de espacios comunes del centro (biblioteca, aulas de informática, patio, huerto escolar) como entornos de aprendizaje ampliado.</p>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(1)">← Capítulo 2</span>
+      <span class="chapter-nav-btn" onclick="showChapter(3)">Capítulo 4: Coordinación Curricular →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 4: COORDINACIÓN CURRICULAR -->
+<div class="section-chapter" id="chapter-3">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">4</div>
+      <div class="chapter-header-text">
+        <h1>Coordinación y Concreción Curricular</h1>
+        <p class="chapter-desc">Concreción de contenidos por etapas, coordinación de ciclos y trabajo de los equipos docentes.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>4.1. Estructura Curricular por Etapas</h2>
+      <p>El currículo del centro se organiza a partir del marco establecido por los Decretos 100/2023 y 101/2023 de Andalucía, que desarrollan los currículos de Educación Infantil y Primaria en el marco de la LOMLOE.</p>
+      <h3>Educación Infantil (2.º ciclo)</h3>
+      <p>El currículo se organiza en torno a tres ámbitos de experiencia: <em>Crecimiento en armonía</em>, <em>Descubrimiento y exploración del entorno</em>, y <em>Comunicación y representación de la realidad</em>. Los aprendizajes se concretan en el Proyecto de Trabajo de Infantil y en las Programaciones Didácticas de ciclo.</p>
+      <h3>Educación Primaria</h3>
+      <p>Las programaciones didácticas por áreas se estructuran por ciclos (1.º-2.º, 3.º-4.º y 5.º-6.º) e incluyen situaciones de aprendizaje, criterios de evaluación, saberes básicos e indicadores de logro vinculados a las competencias clave.</p>
+
+      <h2>4.2. Coordinación de Equipos Docentes</h2>
+      <ul>
+        <li><strong>Equipos de ciclo:</strong> Se reúnen quincenalmente para coordinar programaciones, compartir recursos y analizar los resultados del alumnado.</li>
+        <li><strong>Equipo de orientación y apoyo:</strong> Coordinación semanal entre tutores/as, PT, AL y orientador/a del EOE.</li>
+        <li><strong>Equipo técnico de coordinación pedagógica (ETCP):</strong> Órgano colegiado de coordinación didáctica, presidido por el director/a.</li>
+        <li><strong>Claustro:</strong> Reunión mensual ordinaria para cuestiones pedagógicas de carácter general.</li>
+      </ul>
+
+      <div class="acento-box">
+        <strong>Criterio de coherencia vertical:</strong> El centro garantiza la progresión y coherencia de los aprendizajes entre cursos y ciclos mediante el trabajo coordinado de los equipos docentes y el uso de instrumentos de seguimiento compartidos.
+      </div>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(2)">← Capítulo 3</span>
+      <span class="chapter-nav-btn" onclick="showChapter(4)">Capítulo 5: Evaluación →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 5: EVALUACIÓN -->
+<div class="section-chapter" id="chapter-4">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">5</div>
+      <div class="chapter-header-text">
+        <h1>Evaluación y Promoción del Alumnado</h1>
+        <p class="chapter-desc">Procedimientos, criterios de calificación y criterios de decisión sobre la promoción.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>5.1. Principios de la Evaluación</h2>
+      <p>La evaluación en el CEIP Bartolomé Flores se concibe como un proceso continuo, global, formativo e integrador, orientado a la mejora del proceso de enseñanza-aprendizaje y al desarrollo competencial del alumnado.</p>
+
+      <h2>5.2. Tipos de Evaluación</h2>
+      <ul>
+        <li><strong>Evaluación inicial:</strong> Al comienzo de cada curso y unidad didáctica, para detectar conocimientos previos y ajustar la respuesta educativa.</li>
+        <li><strong>Evaluación continua:</strong> A lo largo de todo el proceso de aprendizaje, con recogida sistemática de evidencias mediante distintos instrumentos.</li>
+        <li><strong>Evaluación final de curso:</strong> Al término de cada curso, con juicio global sobre el grado de adquisición de las competencias clave.</li>
+        <li><strong>Evaluación final de ciclo:</strong> Con carácter decisorio respecto a la promoción del alumnado.</li>
+      </ul>
+
+      <h2>5.3. Instrumentos de Evaluación</h2>
+      <ul>
+        <li>Observación sistemática del alumnado y registro anecdótico.</li>
+        <li>Producciones escritas y trabajos del alumnado (portfolio).</li>
+        <li>Rúbricas y escalas de valoración competencial.</li>
+        <li>Pruebas orales y escritas contextualizadas.</li>
+        <li>Autoevaluación y coevaluación del alumnado.</li>
+        <li>Situaciones de aprendizaje integradas como instrumento de evaluación.</li>
+      </ul>
+
+      <h2>5.4. Criterios de Promoción</h2>
+      <div class="info-box">
+        <strong>Base normativa:</strong> Artículo 20 de la LOE (modificado por LOMLOE), Decreto 101/2023 y Orden de 30 de mayo de 2023.
+      </div>
+      <p>Con carácter general, el alumnado promociona al finalizar cada curso. La decisión de no promoción en un curso es de carácter excepcional y requiere el informe motivado del equipo docente, la audiencia de las familias y la intervención del orientador/a.</p>
+      <p>En ningún caso se repetirá curso por segunda vez en la misma etapa sin que se hayan aplicado previamente todas las medidas de apoyo y refuerzo disponibles.</p>
+
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(3)">← Capítulo 4</span>
+      <span class="chapter-nav-btn" onclick="showChapter(5)">Capítulo 6: Convivencia →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 6: CONVIVENCIA -->
+<div class="section-chapter" id="chapter-5">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">6</div>
+      <div class="chapter-header-text">
+        <h1>Plan de Convivencia</h1>
+        <p class="chapter-desc">Normas de convivencia, protocolos de actuación, mediación y gestión positiva de conflictos.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>6.1. Objetivos del Plan de Convivencia</h2>
+      <p>El Plan de Convivencia del CEIP Bartolomé Flores tiene como finalidad crear y mantener un clima escolar positivo que favorezca el aprendizaje y el desarrollo integral del alumnado, a través de la prevención de conflictos y la formación en valores democráticos.</p>
+
+      <h2>6.2. Normas de Convivencia</h2>
+      <h3>Normas generales del centro</h3>
+      <ul>
+        <li>Tratar con respeto a todas las personas de la comunidad educativa.</li>
+        <li>Respetar los materiales, instalaciones y espacios del centro.</li>
+        <li>Asistir con puntualidad y regularidad a las clases.</li>
+        <li>Resolver los conflictos mediante el diálogo y la negociación, evitando la violencia física o verbal.</li>
+        <li>Participar activamente en las actividades de aula y de centro.</li>
+        <li>Respetar la diversidad cultural, religiosa, lingüística y de orientación afectivo-sexual.</li>
+      </ul>
+
+      <h2>6.3. Protocolos de Actuación</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag">ACOSO</span><span>Protocolo de detección e intervención ante situaciones de acoso escolar (Instrucciones de la Dirección General)</span></div>
+        <div class="norma-item"><span class="norma-tag">MALTRATO</span><span>Protocolo de actuación ante indicadores de maltrato infantil y violencia en el entorno familiar</span></div>
+        <div class="norma-item"><span class="norma-tag">IGUALDAD</span><span>Protocolo de actuación ante situaciones de acoso sexual y acoso por razón de sexo u orientación sexual</span></div>
+        <div class="norma-item"><span class="norma-tag">DIGITAL</span><span>Protocolo de uso responsable de dispositivos digitales y respuesta ante ciberacoso</span></div>
+      </div>
+
+      <h2>6.4. Mediación Escolar</h2>
+      <p>El centro cuenta con un sistema de mediación escolar que permite la resolución alternativa de conflictos entre iguales, con la intervención del profesorado mediador y, en su caso, del alumnado mediador formado a tal efecto.</p>
+
+      <h2>6.5. Medidas Correctoras</h2>
+      <p>Las conductas contrarias a las normas de convivencia se corregirán mediante medidas educativas y restaurativas, priorizando siempre la reparación del daño y la reflexión del alumnado sobre su conducta. Las medidas de corrección se gradúan en función de la gravedad de la conducta y de los antecedentes del alumno/a.</p>
+
+      <div class="acento-box">
+        <strong>Principio rector:</strong> Toda medida correctora tiene carácter educativo y formativo. Su finalidad no es sancionadora sino la mejora de la convivencia y el desarrollo de la responsabilidad personal del alumnado.
+      </div>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(4)">← Capítulo 5</span>
+      <span class="chapter-nav-btn" onclick="showChapter(6)">Capítulo 7: Diversidad →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 7: DIVERSIDAD -->
+<div class="section-chapter" id="chapter-6">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">7</div>
+      <div class="chapter-header-text">
+        <h1>Atención a la Diversidad</h1>
+        <p class="chapter-desc">Medidas y actuaciones para la atención al alumnado con necesidades específicas de apoyo educativo.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>7.1. Marco Normativo</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag">LOMLOE</span><span>Art. 71-79 bis. Alumnado con necesidad específica de apoyo educativo</span></div>
+        <div class="norma-item"><span class="norma-tag">D 101/2023</span><span>Medidas de atención a la diversidad en Educación Primaria en Andalucía</span></div>
+        <div class="norma-item"><span class="norma-tag">DECRETO</span><span>Decreto 147/2002 de atención educativa al alumnado con NEE en Andalucía</span></div>
+      </div>
+
+      <h2>7.2. Medidas Ordinarias</h2>
+      <ul>
+        <li><strong>Agrupamientos flexibles:</strong> Reagrupamiento del alumnado con carácter temporal para trabajar determinadas destrezas o contenidos.</li>
+        <li><strong>Apoyo en grupos ordinarios:</strong> Presencia de un segundo docente en el aula para atender al alumnado con mayores dificultades.</li>
+        <li><strong>Adaptaciones de acceso al currículo:</strong> Modificaciones en los materiales, tiempos y apoyos sin alterar los objetivos generales.</li>
+        <li><strong>Plan de Acción Tutorial:</strong> Seguimiento individualizado del alumnado con mayor vulnerabilidad educativa.</li>
+      </ul>
+
+      <h2>7.3. Medidas Extraordinarias</h2>
+      <ul>
+        <li><strong>Adaptaciones Curriculares Significativas (ACS):</strong> Para el alumnado con necesidades educativas especiales, elaboradas por el tutor/a con el asesoramiento del EOE.</li>
+        <li><strong>Aula ATAL:</strong> Apoyo lingüístico específico para el alumnado extranjero con desconocimiento del español.</li>
+        <li><strong>Atención PT y AL:</strong> Intervención especializada del profesorado de Pedagogía Terapéutica y Audición y Lenguaje.</li>
+        <li><strong>Programa Específico Personalizado (PEP):</strong> Para alumnado con altas capacidades intelectuales.</li>
+      </ul>
+
+      <h2>7.4. Proceso de Identificación y Evaluación Psicopedagógica</h2>
+      <p>La detección de alumnado con posibles NEAE se realiza a través de la evaluación inicial, la observación sistemática del profesorado tutor y la coordinación con el EOE. El proceso de evaluación psicopedagógica es responsabilidad del orientador/a del equipo de zona, con la colaboración del tutor/a y las familias.</p>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(5)">← Capítulo 6</span>
+      <span class="chapter-nav-btn" onclick="showChapter(7)">Capítulo 8: Refuerzo →</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAP 8-16: Versiones resumidas con estructura coherente -->
+<div class="section-chapter" id="chapter-7">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">8</div>
+      <div class="chapter-header-text">
+        <h1>Refuerzo y Recuperación de Aprendizajes</h1>
+        <p class="chapter-desc">Organización de las actividades de refuerzo educativo y planes de recuperación de aprendizajes no adquiridos.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>8.1. Actuaciones de Refuerzo</h2>
+      <p>El refuerzo educativo se organiza de forma preventiva para el alumnado que presenta dificultades en el aprendizaje, antes de que estas se consoliden. Se desarrolla prioritariamente en las áreas instrumentales (Lengua Castellana y Matemáticas) y se integra en la dinámica ordinaria del aula.</p>
+      <ul>
+        <li><strong>Refuerzo en horario lectivo:</strong> El segundo docente disponible en el centro apoya dentro del aula ordinaria.</li>
+        <li><strong>Grupos de refuerzo:</strong> En aquellos casos donde la reorganización del horario lo permita, se establecerán grupos específicos de refuerzo fuera del aula ordinaria.</li>
+        <li><strong>Actividades de refuerzo para casa:</strong> El tutor/a podrá proponer actividades complementarias adecuadas al nivel del alumno/a.</li>
+      </ul>
+      <h2>8.2. Planes de Recuperación</h2>
+      <p>Al inicio de cada curso, el tutor/a elaborará un plan de recuperación para el alumnado que no superó los objetivos del curso anterior. Este plan establece las actividades específicas, los recursos adicionales y el calendario de seguimiento.</p>
+      <div class="info-box"><strong>Criterio:</strong> El refuerzo y la recuperación son medidas de carácter educativo, no punitivo. Deben estar coordinadas con las familias e integradas en el Plan de Acción Tutorial del alumnado.</div>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(6)">← Capítulo 7</span>
+      <span class="chapter-nav-btn" onclick="showChapter(8)">Capítulo 9: Orientación →</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-8">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">9</div>
+      <div class="chapter-header-text">
+        <h1>Plan de Orientación y Acción Tutorial</h1>
+        <p class="chapter-desc">Acción tutorial, orientación personal, académica y vocacional. Coordinación con el EOE.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>9.1. La Tutoría en el Centro</h2>
+      <p>La acción tutorial es responsabilidad de todo el equipo docente, aunque corresponde específicamente al tutor/a su coordinación y desarrollo. Se orienta a favorecer el desarrollo integral del alumnado, el seguimiento de su proceso educativo y la colaboración con las familias.</p>
+      <h2>9.2. Ámbitos de la Acción Tutorial</h2>
+      <ul>
+        <li><strong>Seguimiento académico individual:</strong> Análisis periódico de los resultados de aprendizaje y toma de decisiones de mejora.</li>
+        <li><strong>Orientación personal y emocional:</strong> Acompañamiento en el desarrollo personal, gestión emocional y habilidades sociales.</li>
+        <li><strong>Orientación a las familias:</strong> Reuniones grupales e individuales periódicas. Información sobre la evolución del alumnado y participación en las decisiones educativas.</li>
+        <li><strong>Coordinación con el EOE:</strong> Derivación de casos, seguimiento de alumnado con NEAE y orientación sobre medidas de atención a la diversidad.</li>
+      </ul>
+      <h2>9.3. Plan de Acción Tutorial (PAT)</h2>
+      <p>El PAT del centro establece las actuaciones tutoriales programadas para cada ciclo y nivel, su temporalización, los recursos necesarios y los indicadores de evaluación. Se revisa anualmente en coordinación con el EOE y se aprueba en el ETCP.</p>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(7)">← Capítulo 8</span>
+      <span class="chapter-nav-btn" onclick="showChapter(9)">Capítulo 10: Planes Estratégicos →</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-9">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">10</div>
+      <div class="chapter-header-text">
+        <h1>Planes Estratégicos del Centro</h1>
+        <p class="chapter-desc">Plan Digital, Plan Lector, Plan de Igualdad, proyectos de mejora y programas específicos.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>10.1. Plan de Transformación Digital Educativa (PTDE)</h2>
+      <p>En el marco del Decreto 179/2023 de Andalucía, el centro desarrolla su Plan de Transformación Digital Educativa, que establece las líneas de acción para la integración efectiva de la tecnología en el proceso de enseñanza-aprendizaje.</p>
+      <ul>
+        <li>Desarrollo de la competencia digital docente (Marco DigComp 2.2).</li>
+        <li>Uso pedagógico de dispositivos digitales y plataformas educativas (iPasen, Moodle).</li>
+        <li>Formación del profesorado en ciudadanía digital y uso seguro de internet.</li>
+      </ul>
+      <h2>10.2. Plan Lector</h2>
+      <p>El Plan Lector del centro garantiza 30 minutos diarios de lectura en Educación Primaria, coordina el uso de la biblioteca escolar y desarrolla actividades de animación lectora en colaboración con las familias y el entorno.</p>
+      <h2>10.3. Plan de Igualdad</h2>
+      <p>El Plan de Igualdad de Género integra actuaciones transversales orientadas a eliminar estereotipos de género, visibilizar a las mujeres en el currículo y promover relaciones de igualdad en toda la comunidad educativa.</p>
+      <h2>10.4. Otros Proyectos y Programas</h2>
+      <ul>
+        <li>Programa de Huerto Escolar y Educación Ambiental.</li>
+        <li>Programa de Escuela: Espacio de Paz.</li>
+        <li>Participación en programas europeos eTwinning y Erasmus+.</li>
+        <li>Proyecto de Aprendizaje-Servicio (ApS).</li>
+      </ul>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(8)">← Capítulo 9</span>
+      <span class="chapter-nav-btn" onclick="showChapter(10)">Capítulo 11: Formación →</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-10">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header">
+      <div class="chapter-num-big">11</div>
+      <div class="chapter-header-text">
+        <h1>Plan de Formación del Profesorado</h1>
+        <p class="chapter-desc">Necesidades formativas, líneas prioritarias y modalidades de formación en centro.</p>
+      </div>
+    </div>
+    <div class="chapter-content">
+      <h2>11.1. Diagnóstico de Necesidades Formativas</h2>
+      <p>La detección de las necesidades formativas del profesorado se realiza anualmente mediante cuestionarios de autoevaluación, análisis de los resultados académicos del alumnado y propuestas del Claustro y el ETCP.</p>
+      <h2>11.2. Líneas Prioritarias</h2>
+      <ul>
+        <li>Diseño de situaciones de aprendizaje competenciales (LOMLOE).</li>
+        <li>Evaluación formativa e instrumentos de evaluación por competencias.</li>
+        <li>Inclusión educativa y atención a la diversidad.</li>
+        <li>Competencia digital docente (DigComp 2.2).</li>
+        <li>Convivencia positiva y gestión de conflictos en el aula.</li>
+        <li>Bienestar docente y prevención del burnout.</li>
+      </ul>
+      <h2>11.3. Modalidades de Formación</h2>
+      <ul>
+        <li><strong>Formación en centro (FOCO):</strong> Programa coordinado por el CEP de referencia, adaptado a las necesidades específicas del equipo docente.</li>
+        <li><strong>Cursos y jornadas del CEP:</strong> Formación individual del profesorado en modalidades presencial y semipresencial.</li>
+        <li><strong>Formación autónoma:</strong> Lectura especializada, MOOCs y formación en red.</li>
+        <li><strong>Grupos de trabajo:</strong> Elaboración de materiales curriculares y reflexión sobre la práctica docente.</li>
+      </ul>
+    </div>
+    <div class="chapter-nav">
+      <span class="chapter-nav-btn" onclick="showChapter(9)">← Capítulo 10</span>
+      <span class="chapter-nav-btn" onclick="showChapter(11)">Capítulo 12: Tiempo Escolar →</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-11">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">12</div><div class="chapter-header-text"><h1>Organización del Tiempo Escolar</h1><p class="chapter-desc">Criterios para la distribución del tiempo, horarios generales y uso de espacios del centro.</p></div></div>
+    <div class="chapter-content">
+      <h2>12.1. Criterios Generales</h2>
+      <p>La organización del tiempo escolar responde a criterios pedagógicos orientados a optimizar el aprendizaje del alumnado, facilitando la concentración en las áreas instrumentales en los períodos de mayor rendimiento cognitivo.</p>
+      <ul>
+        <li>Las áreas instrumentales (Lengua y Matemáticas) se impartirán preferentemente en las primeras horas de la jornada.</li>
+        <li>Se garantizará un tiempo mínimo de 30 minutos diarios de lectura en Educación Primaria.</li>
+        <li>Los recreos se organizarán garantizando la seguridad y el juego inclusivo en el patio.</li>
+        <li>Los desdobles y agrupamientos flexibles se programarán minimizando el impacto en la coherencia del horario.</li>
+      </ul>
+      <h2>12.2. Uso de Espacios</h2>
+      <p>El uso de los espacios comunes del centro (biblioteca, sala de informática, gimnasio, salón de actos y huerto escolar) se organiza mediante un cuadrante de uso semanal elaborado por Jefatura de Estudios, con criterios de equidad entre los grupos.</p>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(10)">← Capítulo 11</span><span class="chapter-nav-btn" onclick="showChapter(12)">Capítulo 13: Evaluación Interna →</span></div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-12">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">13</div><div class="chapter-header-text"><h1>Evaluación Interna del Centro</h1><p class="chapter-desc">Procedimientos de autoevaluación, indicadores de calidad y procesos de mejora continua.</p></div></div>
+    <div class="chapter-content">
+      <h2>13.1. El Proceso de Autoevaluación</h2>
+      <p>El centro realiza anualmente un proceso de autoevaluación institucional que analiza el grado de consecución de los objetivos del Plan de Centro, el funcionamiento de los órganos colegiados, la calidad de los procesos de enseñanza-aprendizaje y la satisfacción de la comunidad educativa.</p>
+      <h2>13.2. Dimensiones e Indicadores</h2>
+      <ul>
+        <li><strong>Resultados académicos:</strong> Tasas de promoción, resultados en evaluaciones de diagnóstico y pruebas externas.</li>
+        <li><strong>Convivencia:</strong> Número de incidencias, resolución de conflictos y clima escolar.</li>
+        <li><strong>Participación:</strong> Asistencia a reuniones, implicación en órganos colegiados y actividades complementarias.</li>
+        <li><strong>Satisfacción:</strong> Cuestionarios anuales a familias, alumnado y profesorado.</li>
+        <li><strong>Planes y programas:</strong> Grado de desarrollo y resultados de los planes estratégicos del centro.</li>
+      </ul>
+      <h2>13.3. Propuestas de Mejora</h2>
+      <p>Las conclusiones del proceso de autoevaluación se recogen en una Memoria Anual y se traducen en propuestas de mejora que se incorporan al Plan de Centro del curso siguiente, cerrando el ciclo de mejora continua.</p>
+      <div class="info-box"><strong>Instrumento:</strong> El centro utiliza los indicadores homologados del sistema SENECA y los cuestionarios estandarizados de la Agencia Andaluza de Evaluación Educativa (AGAEVE).</div>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(11)">← Capítulo 12</span><span class="chapter-nav-btn" onclick="showChapter(13)">Capítulo 14: Agrupamientos →</span></div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-13">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">14</div><div class="chapter-header-text"><h1>Criterios de Agrupamientos y Tutorías</h1><p class="chapter-desc">Criterios pedagógicos para la asignación de tutorías y organización de grupos de alumnado.</p></div></div>
+    <div class="chapter-content">
+      <h2>14.1. Criterios para la Asignación de Tutorías</h2>
+      <p>La asignación de tutorías corresponde al director/a, oídas las propuestas del Jefe/a de Estudios y del Claustro. Se rige por los siguientes criterios pedagógicos:</p>
+      <ul>
+        <li>Continuidad con el grupo en ciclos consecutivos, siempre que sea posible y pedagógicamente conveniente.</li>
+        <li>Adecuación del perfil docente a las características del grupo y a las necesidades del alumnado con NEAE.</li>
+        <li>Distribución equitativa de los grupos con mayor complejidad educativa entre el profesorado experimentado y el novel.</li>
+        <li>Coherencia con el proyecto de trabajo del equipo de ciclo.</li>
+      </ul>
+      <h2>14.2. Organización de Grupos</h2>
+      <p>Los grupos se organizan al inicio del ciclo con criterios de heterogeneidad (diversidad de nivel de competencia curricular, género y origen cultural), favoreciendo la inclusión efectiva. Los cambios de grupo durante el curso requerirán informe del tutor/a y autorización del Equipo Directivo.</p>
+      <h2>14.3. Agrupamientos Flexibles</h2>
+      <p>Los agrupamientos flexibles intragrupo e intergrupo se organizarán como medida ordinaria de atención a la diversidad, con carácter temporal y reversible, y siempre vinculados a objetivos pedagógicos claros.</p>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(12)">← Capítulo 13</span><span class="chapter-nav-btn" onclick="showChapter(14)">Capítulo 15: Programaciones →</span></div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-14">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">15</div><div class="chapter-header-text"><h1>Criterios para las Programaciones Didácticas</h1><p class="chapter-desc">Criterios de elaboración, estructura mínima, revisión y publicación de las programaciones por áreas.</p></div></div>
+    <div class="chapter-content">
+      <h2>15.1. Estructura Mínima de las Programaciones</h2>
+      <p>Las programaciones didácticas de todas las áreas y etapas incluirán, como mínimo, los siguientes elementos:</p>
+      <ul>
+        <li>Introducción y contextualización al grupo.</li>
+        <li>Competencias clave y perfil competencial de referencia.</li>
+        <li>Objetivos de etapa y de área.</li>
+        <li>Saberes básicos organizados por bloques.</li>
+        <li>Criterios de evaluación.</li>
+        <li>Situaciones de aprendizaje (mínimo tres por trimestre).</li>
+        <li>Instrumentos de evaluación y criterios de calificación.</li>
+        <li>Medidas de atención a la diversidad.</li>
+        <li>Materiales y recursos didácticos.</li>
+        <li>Actividades complementarias y extraescolares vinculadas al área.</li>
+      </ul>
+      <h2>15.2. Revisión y Aprobación</h2>
+      <p>Las programaciones se elaboran en el seno de los equipos de ciclo, se revisan por el ETCP y se aprueban por el Claustro antes del 30 de octubre de cada curso escolar. Se publican en la web del centro para conocimiento de las familias.</p>
+      <div class="acento-box"><strong>Novedad LOMLOE:</strong> Las programaciones deben incorporar obligatoriamente situaciones de aprendizaje con enfoque competencial y criterios de evaluación vinculados a los perfiles competenciales por ciclos establecidos en los Decretos 100/2023 y 101/2023.</div>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(13)">← Capítulo 14</span><span class="chapter-nav-btn" onclick="showChapter(15)">Capítulo 16: ROF →</span></div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-15">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">16</div><div class="chapter-header-text"><h1>Reglamento de Organización y Funcionamiento</h1><p class="chapter-desc">Estructura organizativa, órganos de gobierno, funciones y normas de funcionamiento del centro.</p></div></div>
+    <div class="chapter-content">
+      <h2>16.1. Órganos de Gobierno</h2>
+      <h3>Órganos Colegiados</h3>
+      <ul>
+        <li><strong>Consejo Escolar:</strong> Máximo órgano de participación de la comunidad educativa. Composición, competencias y régimen de funcionamiento según Decreto 328/2010.</li>
+        <li><strong>Claustro de Profesorado:</strong> Órgano de participación del profesorado en la organización y gobierno del centro.</li>
+      </ul>
+      <h3>Órganos Unipersonales</h3>
+      <ul>
+        <li><strong>Director/a:</strong> Representante de la Administración educativa en el centro y responsable de la gestión.</li>
+        <li><strong>Jefe/a de Estudios:</strong> Coordinación pedagógica y organización académica.</li>
+        <li><strong>Secretario/a:</strong> Gestión administrativa y económica.</li>
+      </ul>
+      <h2>16.2. Órganos de Coordinación Docente</h2>
+      <ul>
+        <li><strong>ETCP:</strong> Equipo Técnico de Coordinación Pedagógica.</li>
+        <li><strong>Equipos de ciclo:</strong> Educación Infantil, 1.er ciclo EP, 2.º ciclo EP, 3.er ciclo EP.</li>
+        <li><strong>Equipos docentes de nivel.</strong></li>
+        <li><strong>Coordinadores/as:</strong> Igualdad, Biblioteca, Bienestar Digital, Formación en Centro.</li>
+      </ul>
+      <h2>16.3. Normas de Funcionamiento</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag">ENTRADAS</span><span>Acceso del alumnado por la puerta principal. Entrada acompañada hasta 1.er ciclo. Puntualidad obligatoria.</span></div>
+        <div class="norma-item"><span class="norma-tag">SALIDAS</span><span>Salida con adulto autorizado. Gestión a través de iPasen para cambios de persona autorizada.</span></div>
+        <div class="norma-item"><span class="norma-tag">VISITAS</span><span>Acceso de familias previa cita con el tutor/a. Registro obligatorio en conserjería.</span></div>
+        <div class="norma-item"><span class="norma-tag">MÓVILES</span><span>Prohibición del uso de teléfonos móviles por parte del alumnado durante la jornada escolar.</span></div>
+      </div>
+      <div class="info-box"><strong>Base normativa:</strong> Decreto 328/2010, de 13 de julio, por el que se aprueba el Reglamento Orgánico de los CEIP de Andalucía. Instrucciones de comienzo de curso vigentes.</div>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(14)">← Capítulo 15</span><span class="chapter-nav-btn" onclick="showChapter(16)">Capítulo 17: Proyecto de Gestión →</span></div>
+  </div>
+</div>
+
+<div class="section-chapter" id="chapter-16">
+  <div class="chapter-inner">
+    <span class="chapter-back" onclick="showHome()">← Volver al índice</span>
+    <div class="chapter-header"><div class="chapter-num-big">17</div><div class="chapter-header-text"><h1>Proyecto de Gestión</h1><p class="chapter-desc">Criterios de gestión económica, uso de instalaciones, contrataciones y rendición de cuentas.</p></div></div>
+    <div class="chapter-content">
+      <h2>17.1. Gestión Económica</h2>
+      <p>El Proyecto de Gestión establece los criterios para la elaboración del presupuesto anual del centro, la ejecución del gasto y la rendición de cuentas ante el Consejo Escolar y la Administración educativa.</p>
+      <ul>
+        <li><strong>Presupuesto anual:</strong> Elaborado por el secretario/a, presentado al Consejo Escolar y aprobado antes del 31 de octubre.</li>
+        <li><strong>Criterios de distribución:</strong> Prioridad a la adquisición de materiales curriculares, mantenimiento de instalaciones y actividades complementarias.</li>
+        <li><strong>Control y seguimiento:</strong> El Consejo Escolar aprueba la liquidación del presupuesto en sesión ordinaria de final de curso.</li>
+      </ul>
+      <h2>17.2. Uso y Mantenimiento de Instalaciones</h2>
+      <p>El centro establece normas para el uso ordenado de sus instalaciones y recursos materiales, garantizando el mantenimiento preventivo y la gestión responsable del patrimonio público.</p>
+      <h2>17.3. Contratación de Servicios</h2>
+      <p>Cualquier contratación de servicios o adquisición de bienes se realizará de acuerdo con la normativa de contratos del sector público y con los criterios aprobados por el Consejo Escolar, garantizando la transparencia y la eficiencia en el uso de los recursos públicos.</p>
+      <h2>17.4. Actividades Complementarias y Extraescolares</h2>
+      <p>La organización y financiación de las actividades complementarias y extraescolares se rige por los criterios pedagógicos y económicos establecidos en el Proyecto de Gestión, con aprobación previa del Consejo Escolar.</p>
+      <div class="acento-box"><strong>Transparencia:</strong> El Proyecto de Gestión y la liquidación del presupuesto se publican en el tablón de anuncios del centro y se ponen a disposición de la comunidad educativa.</div>
+    </div>
+    <div class="chapter-nav"><span class="chapter-nav-btn" onclick="showChapter(15)">← Capítulo 16</span><span class="chapter-nav-btn disabled">Fin del Plan de Centro ✓</span></div>
+  </div>
+</div>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Plan de Centro · CEIP Bartolomé Flores</h4>
+      <p>Versión consolidada 2011–2025. Actualizado con la normativa LOMLOE vigente (Decretos 100/2023 y 101/2023 de Andalucía).</p>
+      <p style="margin-top:0.75rem;">Aprobado por el Consejo Escolar. Mojácar, Almería.</p>
+    </div>
+    <div>
+      <h4>Documentos</h4>
+      <ul>
+        <li><a href="#">Proyecto Educativo (PDF)</a></li>
+        <li><a href="#">ROF (PDF)</a></li>
+        <li><a href="#">Proyecto de Gestión (PDF)</a></li>
+        <li><a href="#">Plan de Convivencia (PDF)</a></li>
+        <li><a href="#">Actas de aprobación</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Normativa de referencia</h4>
+      <ul>
+        <li><a href="#">LOMLOE (LO 3/2020)</a></li>
+        <li><a href="#">Decreto 328/2010</a></li>
+        <li><a href="#">Decreto 101/2023 EP</a></li>
+        <li><a href="#">Decreto 100/2023 EI</a></li>
+        <li><a href="#">Instrucciones 2024-25</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom" id="contacto-footer">
+    <span>© 2025 CEIP Bartolomé Flores · Mojácar (Almería) · Consejería de Educación y Deporte, Junta de Andalucía</span>
+    <span>Código de centro: 04001389</span>
+  </div>
+</footer>
+
+<script>
+  const TOTAL = 17;
+
+  function showHome() {
+    document.getElementById('home').style.display = 'block';
+    for (let i = 0; i < TOTAL; i++) {
+      const el = document.getElementById('chapter-' + i);
+      if (el) el.classList.remove('active');
+    }
+    document.getElementById('nav-inicio').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showChapter(n) {
+    document.getElementById('home').style.display = 'none';
+    for (let i = 0; i < TOTAL; i++) {
+      const el = document.getElementById('chapter-' + i);
+      if (el) el.classList.remove('active');
+    }
+    const chapter = document.getElementById('chapter-' + n);
+    if (chapter) {
+      chapter.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.getElementById('nav-inicio').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
