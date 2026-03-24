@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Centro · CEIP Bartolomé Flores</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1a5c38;
+    --verde-medio: #2d7a50;
+    --verde-claro: #e8f4ed;
+    --verde-hover: #f0f8f3;
+    --acento: #c8832a;
+    --acento-claro: #fdf3e3;
+    --texto: #1e2d22;
+    --texto-suave: #4a5e51;
+    --gris-borde: #d4e2d9;
+    --gris-fondo: #f6f9f7;
+    --blanco: #ffffff;
+    --sombra: 0 2px 16px rgba(26,92,56,0.09);
+    --sombra-card: 0 4px 24px rgba(26,92,56,0.13);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    --radius: 12px;
+
+    /* colores por bloque */
+    --pec-color: #1a5c38;
+    --pec-claro: #e8f4ed;
+    --rof-color: #1a3d6b;
+    --rof-claro: #e8eef8;
+    --gest-color: #6b2d1a;
+    --gest-claro: #f8ede8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--texto); background: var(--blanco); line-height: 1.65; }
+
+  /* ─────────────────────────────────────────
+     TOP NAV
+  ───────────────────────────────────────── */
+  .topnav {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+  }
+  .topnav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    gap: 1.5rem;
+  }
+
+  /* Logo */
+  .topnav-logo {
+    display: flex; align-items: center; gap: 0.7rem;
+    text-decoration: none; flex-shrink: 0;
+    cursor: pointer;
+  }
+  .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--verde);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: white; }
+  .logo-text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.95rem; color: var(--verde);
+  }
+  .logo-text span { font-size: 0.72rem; color: var(--texto-suave); }
+
+  /* Tres bloques principales en nav */
+  .nav-bloques {
+    display: flex; gap: 0.25rem; list-style: none; flex: 1; justify-content: center;
+  }
+  .nav-bloque-btn {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.875rem; font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    background: none;
+  }
+  .nav-bloque-btn .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  /* PEC */
+  .btn-pec { color: var(--pec-color); }
+  .btn-pec .dot { background: var(--pec-color); }
+  .btn-pec:hover, .btn-pec.active {
+    background: var(--pec-claro);
+    border-color: var(--pec-color);
+  }
+  /* ROF */
+  .btn-rof { color: var(--rof-color); }
+  .btn-rof .dot { background: var(--rof-color); }
+  .btn-rof:hover, .btn-rof.active {
+    background: var(--rof-claro);
+    border-color: var(--rof-color);
+  }
+  /* GESTIÓN */
+  .btn-gest { color: var(--gest-color); }
+  .btn-gest .dot { background: var(--gest-color); }
+  .btn-gest:hover, .btn-gest.active {
+    background: var(--gest-claro);
+    border-color: var(--gest-color);
+  }
+
+  /* Enlace inicio */
+  .nav-inicio-link {
+    font-size: 0.82rem; font-weight: 500;
+    color: var(--texto-suave);
+    text-decoration: none; flex-shrink: 0;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav-inicio-link:hover { background: var(--gris-fondo); color: var(--verde); }
+
+  /* ─────────────────────────────────────────
+     HERO
+  ───────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(150deg, var(--verde) 0%, #2d8055 55%, #3a9468 100%);
+    color: white; padding: 5.5rem 2rem 4.5rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 1rem; letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 1.05rem; opacity: 0.88; font-weight: 300;
+    max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex; justify-content: center; gap: 1.75rem;
+    flex-wrap: wrap; font-size: 0.83rem; opacity: 0.8;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+  /* ─────────────────────────────────────────
+     TRES BLOQUES — CARDS PRINCIPALES
+  ───────────────────────────────────────── */
+  .bloques-section {
+    background: var(--gris-fondo);
+    padding: 4.5rem 2rem;
+  }
+  .bloques-title {
+    text-align: center; margin-bottom: 0.6rem;
+  }
+  .bloques-title h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    color: var(--texto);
+  }
+  .bloques-sub {
+    text-align: center; color: var(--texto-suave);
+    font-size: 0.95rem; margin-bottom: 2.75rem; font-weight: 300;
+  }
+  .bloques-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+  }
+
+  .bloque-card {
+    background: var(--blanco);
+    border-radius: 16px;
+    border: 2px solid var(--gris-borde);
+    padding: 2rem 1.75rem 1.75rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative; overflow: hidden;
+  }
+  .bloque-card:hover {
+    box-shadow: var(--sombra-card);
+    transform: translateY(-3px);
+  }
+  .bloque-card .bloque-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem; font-weight: 700;
+    line-height: 1; opacity: 0.07;
+    position: absolute; top: 1rem; right: 1.25rem;
+  }
+  .bloque-card .bloque-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 1.1rem;
+  }
+  .bloque-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem; font-weight: 600;
+    margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .bloque-card .bloque-sigla {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.85rem; display: block;
+  }
+  .bloque-card p {
+    font-size: 0.875rem; color: var(--texto-suave);
+    line-height: 1.6; margin-bottom: 1.5rem;
+  }
+  .bloque-card .bloque-count {
+    font-size: 0.8rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .bloque-card .ver-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem; font-weight: 700;
+    padding: 0.55rem 1.1rem; border-radius: 8px;
+    border: none; cursor: pointer;
+    transition: all 0.2s; margin-top: 0.5rem;
+  }
+
+  /* colores PEC */
+  .bloque-pec { border-color: var(--pec-claro); }
+  .bloque-pec:hover { border-color: var(--pec-color); }
+  .bloque-pec .bloque-num { color: var(--pec-color); }
+  .bloque-pec .bloque-icon { background: var(--pec-claro); }
+  .bloque-pec h3 { color: var(--pec-color); }
+  .bloque-pec .bloque-sigla { color: var(--pec-color); }
+  .bloque-pec .bloque-count { color: var(--pec-color); }
+  .bloque-pec .ver-btn { background: var(--pec-claro); color: var(--pec-color); }
+  .bloque-pec .ver-btn:hover { background: var(--pec-color); color: white; }
+
+  /* colores ROF */
+  .bloque-rof { border-color: var(--rof-claro); }
+  .bloque-rof:hover { border-color: var(--rof-color); }
+  .bloque-rof .bloque-num { color: var(--rof-color); }
+  .bloque-rof .bloque-icon { background: var(--rof-claro); }
+  .bloque-rof h3 { color: var(--rof-color); }
+  .bloque-rof .bloque-sigla { color: var(--rof-color); }
+  .bloque-rof .bloque-count { color: var(--rof-color); }
+  .bloque-rof .ver-btn { background: var(--rof-claro); color: var(--rof-color); }
+  .bloque-rof .ver-btn:hover { background: var(--rof-color); color: white; }
+
+  /* colores GESTIÓN */
+  .bloque-gest { border-color: var(--gest-claro); }
+  .bloque-gest:hover { border-color: var(--gest-color); }
+  .bloque-gest .bloque-num { color: var(--gest-color); }
+  .bloque-gest .bloque-icon { background: var(--gest-claro); }
+  .bloque-gest h3 { color: var(--gest-color); }
+  .bloque-gest .bloque-sigla { color: var(--gest-color); }
+  .bloque-gest .bloque-count { color: var(--gest-color); }
+  .bloque-gest .ver-btn { background: var(--gest-claro); color: var(--gest-color); }
+  .bloque-gest .ver-btn:hover { background: var(--gest-color); color: white; }
+
+  /* ─────────────────────────────────────────
+     VISTA DE BLOQUE (capítulos)
+  ───────────────────────────────────────── */
+  .bloque-view {
+    display: none;
+    animation: fadeUp 0.3s ease;
+  }
+  .bloque-view.active { display: block; }
+
+  /* Banner superior del bloque */
+  .bloque-banner {
+    padding: 3rem 2rem 2.75rem;
+    position: relative; overflow: hidden;
+  }
+  .bloque-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  }
+  .bloque-banner-inner {
+    max-width: 1100px; margin: 0 auto; position: relative;
+    display: flex; align-items: flex-end; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .bloque-banner-back {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white; font-size: 0.8rem; font-weight: 600;
+    padding: 0.35rem 0.85rem; border-radius: 20px;
+    cursor: pointer; transition: background 0.2s;
+    margin-bottom: 1.25rem;
+    width: fit-content;
+    display: block;
+  }
+  .bloque-banner-back:hover { background: rgba(255,255,255,0.28); }
+  .bloque-banner-text { flex: 1; }
+  .bloque-banner-sigla {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); margin-bottom: 0.4rem;
+  }
+  .bloque-banner h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: white; font-weight: 700; line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .bloque-banner p {
+    color: rgba(255,255,255,0.82);
+    font-size: 0.95rem; font-weight: 300; max-width: 640px;
+  }
+
+  .banner-pec  { background: linear-gradient(135deg, var(--pec-color), #2d8055); }
+  .banner-rof  { background: linear-gradient(135deg, var(--rof-color), #2557a7); }
+  .banner-gest { background: linear-gradient(135deg, var(--gest-color), #b05530); }
+
+  /* Grid de capítulos dentro del bloque */
+  .caps-section {
+    padding: 3.5rem 2rem 5rem;
+    background: var(--gris-fondo);
+  }
+  .caps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.1rem; max-width: 1100px; margin: 0 auto;
+  }
+
+  .cap-card {
+    background: var(--blanco);
+    border-radius: var(--radius);
+    border: 1px solid var(--gris-borde);
+    padding: 1.5rem 1.4rem;
+    cursor: pointer;
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.22s ease;
+    position: relative; overflow: hidden;
+  }
+  .cap-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .cap-card:hover { box-shadow: var(--sombra-card); transform: translateY(-2px); }
+  .cap-card:hover::after { transform: scaleX(1); }
+
+  .cap-num {
+    width: 42px; height: 42px; min-width: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem; font-weight: 700;
+  }
+  .cap-body h3 { font-size: 0.975rem; font-weight: 600; color: var(--texto); margin-bottom: 0.3rem; line-height: 1.3; }
+  .cap-body p  { font-size: 0.82rem; color: var(--texto-suave); line-height: 1.55; }
+  .cap-arrow { margin-left: auto; align-self: center; opacity: 0; transition: opacity 0.2s, transform 0.2s; font-size: 1rem; }
+  .cap-card:hover .cap-arrow { opacity: 1; transform: translateX(3px); }
+
+  /* PEC cards */
+  .pec-card .cap-num { background: var(--pec-claro); color: var(--pec-color); }
+  .pec-card::after   { background: var(--pec-color); }
+  .pec-card .cap-arrow { color: var(--pec-color); }
+
+  /* ROF cards */
+  .rof-card .cap-num { background: var(--rof-claro); color: var(--rof-color); }
+  .rof-card::after   { background: var(--rof-color); }
+  .rof-card .cap-arrow { color: var(--rof-color); }
+
+  /* GEST cards */
+  .gest-card .cap-num { background: var(--gest-claro); color: var(--gest-color); }
+  .gest-card::after   { background: var(--gest-color); }
+  .gest-card .cap-arrow { color: var(--gest-color); }
+
+  /* ─────────────────────────────────────────
+     CAPÍTULO INDIVIDUAL
+  ───────────────────────────────────────── */
+  .chapter-view {
+    display: none;
+    animation: fadeUp 0.3s ease;
+  }
+  .chapter-view.active { display: block; }
+
+  .chapter-topbar {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--gris-borde);
+    background: var(--blanco);
+  }
+  .chapter-topbar-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; align-items: center; gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .breadcrumb-btn {
+    font-size: 0.8rem; font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px; cursor: pointer;
+    border: none; transition: all 0.2s;
+  }
+  .breadcrumb-sep { color: var(--gris-borde); font-size: 0.85rem; }
+  .breadcrumb-current { font-size: 0.8rem; color: var(--texto-suave); font-weight: 400; }
+
+  .bc-home { background: var(--gris-fondo); color: var(--texto-suave); }
+  .bc-home:hover { background: var(--gris-borde); }
+
+  .bc-pec  { background: var(--pec-claro);  color: var(--pec-color);  }
+  .bc-rof  { background: var(--rof-claro);  color: var(--rof-color);  }
+  .bc-gest { background: var(--gest-claro); color: var(--gest-color); }
+
+  .chapter-body {
+    padding: 3rem 2rem 5rem;
+    background: var(--blanco);
+  }
+  .chapter-body-inner { max-width: 860px; margin: 0 auto; }
+
+  .chapter-header {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding-bottom: 2rem; margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gris-borde);
+  }
+  .chapter-num-big {
+    width: 62px; height: 62px; min-width: 62px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+    color: white;
+  }
+  .chapter-header-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: var(--texto); line-height: 1.2; margin-bottom: 0.45rem;
+  }
+  .chapter-header-text .ch-desc { font-size: 0.92rem; color: var(--texto-suave); }
+
+  /* Contenido */
+  .chapter-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem; margin: 2.25rem 0 0.7rem;
+    padding-bottom: 0.35rem; border-bottom: 1px solid var(--gris-borde);
+  }
+  .chapter-content h3 { font-size: 1rem; font-weight: 600; color: var(--texto); margin: 1.4rem 0 0.45rem; }
+  .chapter-content p  { font-size: 0.96rem; color: var(--texto); margin-bottom: 0.85rem; line-height: 1.75; }
+  .chapter-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .chapter-content ul li { font-size: 0.93rem; color: var(--texto-suave); margin-bottom: 0.4rem; line-height: 1.65; }
+  .chapter-content ul li strong { color: var(--texto); }
+
+  .info-box {
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1rem 1.35rem; margin: 1.5rem 0;
+    font-size: 0.88rem; line-height: 1.65;
+  }
+  .info-box-pec  { background: var(--pec-claro);  border-left: 4px solid var(--pec-color);  color: #1e3d28; }
+  .info-box-rof  { background: var(--rof-claro);  border-left: 4px solid var(--rof-color);  color: #1a2d47; }
+  .info-box-gest { background: var(--gest-claro); border-left: 4px solid var(--gest-color); color: #4a1e0f; }
+  .info-box-acento { background: var(--acento-claro); border-left: 4px solid var(--acento); color: #5a3a0a; }
+
+  .norma-list { display: flex; flex-direction: column; gap: 0.55rem; margin: 0.75rem 0 1.5rem; }
+  .norma-item {
+    display: flex; gap: 0.7rem; align-items: flex-start;
+    padding: 0.65rem 0.9rem;
+    background: var(--gris-fondo); border-radius: 8px;
+    font-size: 0.86rem; border: 1px solid var(--gris-borde);
+  }
+  .norma-tag {
+    font-size: 0.67rem; font-weight: 700; padding: 0.18rem 0.5rem;
+    border-radius: 4px; white-space: nowrap; align-self: flex-start; margin-top: 1px;
+    color: white;
+  }
+  .tag-pec  { background: var(--pec-color); }
+  .tag-rof  { background: var(--rof-color); }
+  .tag-gest { background: var(--gest-color); }
+
+  .comp-chip {
+    display: inline-block; color: white;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.03em; padding: 0.18rem 0.55rem;
+    border-radius: 4px; margin: 0.12rem;
+    background: var(--pec-color);
+  }
+
+  .objetivo-item {
+    background: var(--gris-fondo); border-radius: var(--radius);
+    padding: 1.1rem 1.3rem; margin-bottom: 0.8rem;
+    border: 1px solid var(--gris-borde);
+  }
+  .objetivo-item .obj-id {
+    font-size: 0.73rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 0.3rem;
+  }
+  .objetivo-item p { margin-bottom: 0.4rem; font-size: 0.88rem; }
+
+  .valor-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+    gap: 0.8rem; margin: 1.25rem 0;
+  }
+  .valor-item {
+    background: var(--pec-claro); border-radius: 10px;
+    padding: 0.9rem 1rem; border: 1px solid #c8dfd2;
+  }
+  .valor-titulo { font-weight: 700; font-size: 0.83rem; color: var(--pec-color); margin-bottom: 0.25rem; }
+  .valor-item p { font-size: 0.78rem; color: var(--texto-suave); margin: 0; line-height: 1.5; }
+
+  /* Navegación entre capítulos */
+  .chapter-nav {
+    display: flex; justify-content: space-between;
+    margin-top: 3rem; padding-top: 1.75rem;
+    border-top: 1px solid var(--gris-borde); gap: 1rem;
+  }
+  .ch-nav-btn {
+    border-radius: 8px; padding: 0.6rem 1.1rem;
+    font-size: 0.83rem; font-weight: 600;
+    cursor: pointer; border: 1px solid var(--gris-borde);
+    transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem;
+    background: var(--gris-fondo); color: var(--texto-suave);
+  }
+  .ch-nav-btn:hover { background: var(--gris-borde); color: var(--texto); }
+  .ch-nav-btn.disabled { opacity: 0.3; pointer-events: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────── */
+  footer { background: var(--texto); color: rgba(255,255,255,0.7); padding: 3rem 2rem; }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem;
+  }
+  footer h4 { color: white; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.85rem; font-family: var(--font-display); }
+  footer p, footer li { font-size: 0.79rem; line-height: 1.7; color: rgba(255,255,255,0.58); }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 0.35rem; }
+  footer ul li a { color: rgba(255,255,255,0.58); text-decoration: none; transition: color 0.2s; }
+  footer ul li a:hover { color: white; }
+  .footer-bottom {
+    max-width: 1100px; margin: 2rem auto 0;
+    padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.73rem; color: rgba(255,255,255,0.38);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  /* ─────────────────────────────────────────
+     RESPONSIVE
+  ───────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .bloques-grid { grid-template-columns: 1fr; }
+    .nav-bloques { gap: 0.1rem; }
+    .nav-bloque-btn { font-size: 0.78rem; padding: 0.4rem 0.7rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+    .chapter-nav { flex-direction: column; }
+  }
+  @media (max-width: 640px) {
+    .nav-bloques { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     TOP NAV
+══════════════════════════════════════ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+
+    <div class="topnav-logo" onclick="showHome()">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <strong>Plan de Centro</strong>
+        <span>CEIP Bartolomé Flores · Mojácar</span>
+      </div>
+    </div>
+
+    <ul class="nav-bloques">
+      <li>
+        <button class="nav-bloque-btn btn-pec" id="navbtn-pec" onclick="showBloque('pec')">
+          <span class="dot"></span> Proyecto Educativo
+        </button>
+      </li>
+      <li>
+        <button class="nav-bloque-btn btn-rof" id="navbtn-rof" onclick="showBloque('rof')">
+          <span class="dot"></span> ROF
+        </button>
+      </li>
+      <li>
+        <button class="nav-bloque-btn btn-gest" id="navbtn-gest" onclick="showBloque('gest')">
+          <span class="dot"></span> Proyecto de Gestión
+        </button>
+      </li>
+    </ul>
+
+    <a class="nav-inicio-link" onclick="showHome()">Inicio</a>
+
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HOME
+══════════════════════════════════════ -->
+<div id="view-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Versión Consolidada 2011–2025 · LOMLOE</span>
+      <h1>Plan de Centro<br>CEIP Bartolomé Flores</h1>
+      <p class="hero-sub">
+        Documento institucional que recoge el Proyecto Educativo, el Reglamento de Organización y Funcionamiento y el Proyecto de Gestión del centro, actualizado con la normativa vigente de la Junta de Andalucía.
+      </p>
+      <div class="hero-meta">
+        <span>📍 Mojácar, Almería</span>
+        <span>🏫 Código: 04001389</span>
+        <span>📅 Vigencia: 2024–2025 y siguientes</span>
+        <span>✅ Aprobado por Consejo Escolar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRES BLOQUES -->
+  <section class="bloques-section">
+    <div class="bloques-title"><h2>Explora el Plan de Centro</h2></div>
+    <p class="bloques-sub">Tres grandes documentos que articulan la vida del centro educativo</p>
+
+    <div class="bloques-grid">
+
+      <!-- PEC -->
+      <div class="bloque-card bloque-pec" onclick="showBloque('pec')">
+        <div class="bloque-num">I</div>
+        <div class="bloque-icon">📘</div>
+        <span class="bloque-sigla">PEC</span>
+        <h3>Proyecto Educativo del Centro</h3>
+        <p>Define la identidad pedagógica del centro, sus objetivos propios, los valores que lo orientan, los planes estratégicos y los criterios de organización curricular y evaluación.</p>
+        <div class="bloque-count">📑 14 capítulos</div>
+        <br>
+        <button class="ver-btn">Ver capítulos →</button>
+      </div>
+
+      <!-- ROF -->
+      <div class="bloque-card bloque-rof" onclick="showBloque('rof')">
+        <div class="bloque-num">II</div>
+        <div class="bloque-icon">📋</div>
+        <span class="bloque-sigla">ROF</span>
+        <h3>Reglamento de Organización y Funcionamiento</h3>
+        <p>Establece las normas de organización y convivencia del centro, los órganos de gobierno y coordinación, los derechos y deberes de la comunidad educativa y los protocolos de actuación.</p>
+        <div class="bloque-count">📑 2 capítulos</div>
+        <br>
+        <button class="ver-btn">Ver capítulos →</button>
+      </div>
+
+      <!-- GESTIÓN -->
+      <div class="bloque-card bloque-gest" onclick="showBloque('gest')">
+        <div class="bloque-num">III</div>
+        <div class="bloque-icon">💶</div>
+        <span class="bloque-sigla">PGCE</span>
+        <h3>Proyecto de Gestión del Centro</h3>
+        <p>Fija los criterios para la gestión económica, el uso y mantenimiento de las instalaciones, la contratación de servicios y la rendición de cuentas ante el Consejo Escolar y la Administración.</p>
+        <div class="bloque-count">📑 1 capítulo</div>
+        <br>
+        <button class="ver-btn">Ver capítulo →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section style="padding:4.5rem 2rem; background:var(--blanco);">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div class="bloques-title" style="margin-bottom:0.6rem;"><h2>¿Qué es el Plan de Centro?</h2></div>
+      <p style="text-align:center; color:var(--texto-suave); font-size:0.95rem; margin-bottom:2.75rem; font-weight:300;">
+        Marco normativo: Decreto 328/2010 · LOMLOE · Instrucciones anuales de la Consejería de Educación y Deporte de la Junta de Andalucía
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:1.25rem;">
+        <div style="padding:1.6rem 1.25rem; background:var(--gris-fondo); border-radius:var(--radius); border-left:4px solid var(--pec-color);">
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">🎯</div>
+          <h3 style="font-size:0.9rem;font-weight:700;color:var(--pec-color);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;">Propósito</h3>
+          <p style="font-size:0.83rem;color:var(--texto-suave);line-height:1.6;">Definir la identidad pedagógica, organizativa y económica del CEIP Bartolomé Flores.</p>
+        </div>
+        <div style="padding:1.6rem 1.25rem; background:var(--gris-fondo); border-radius:var(--radius); border-left:4px solid var(--rof-color);">
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">👥</div>
+          <h3 style="font-size:0.9rem;font-weight:700;color:var(--rof-color);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;">A quién va dirigido</h3>
+          <p style="font-size:0.83rem;color:var(--texto-suave);line-height:1.6;">Profesorado, familias, alumnado, personal de administración y Administración educativa.</p>
+        </div>
+        <div style="padding:1.6rem 1.25rem; background:var(--gris-fondo); border-radius:var(--radius); border-left:4px solid var(--gest-color);">
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">🔄</div>
+          <h3 style="font-size:0.9rem;font-weight:700;color:var(--gest-color);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;">Revisión</h3>
+          <p style="font-size:0.83rem;color:var(--texto-suave);line-height:1.6;">Se actualiza anualmente mediante propuestas de mejora aprobadas en Consejo Escolar.</p>
+        </div>
+        <div style="padding:1.6rem 1.25rem; background:var(--gris-fondo); border-radius:var(--radius); border-left:4px solid var(--acento);">
+          <div style="font-size:1.5rem;margin-bottom:0.6rem;">⚖️</div>
+          <h3 style="font-size:0.9rem;font-weight:700;color:var(--acento);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;">Base legal</h3>
+          <p style="font-size:0.83rem;color:var(--texto-suave);line-height:1.6;">LOMLOE, Decreto 328/2010, Decretos 100 y 101/2023 de Andalucía.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" style="background:var(--gris-fondo); padding:4rem 2rem;">
+    <div style="max-width:680px; margin:0 auto; text-align:center;">
+      <div class="bloques-title" style="margin-bottom:0.6rem;"><h2>Contacto</h2></div>
+      <p style="color:var(--texto-suave); margin:0.6rem 0 2rem; font-size:0.92rem;">Para consultas sobre el Plan de Centro, propuestas de modificación o acceso a documentación oficial.</p>
+      <div style="background:white;border-radius:var(--radius);padding:1.75rem;box-shadow:var(--sombra);border:1px solid var(--gris-borde);text-align:left;display:flex;flex-direction:column;gap:0.85rem;">
+        <div style="display:flex;gap:.8rem;align-items:center;font-size:.875rem;"><span>📍</span><span><strong>Dirección:</strong> C/ de la Escuela, s/n · 04638 Mojácar (Almería)</span></div>
+        <div style="display:flex;gap:.8rem;align-items:center;font-size:.875rem;"><span>📞</span><span><strong>Teléfono:</strong> 950 478 XXX</span></div>
+        <div style="display:flex;gap:.8rem;align-items:center;font-size:.875rem;"><span>✉️</span><span><strong>Email:</strong> 04001389.edu@juntadeandalucia.es</span></div>
+        <div style="display:flex;gap:.8rem;align-items:center;font-size:.875rem;"><span>🏛️</span><span><strong>Consejería:</strong> Educación y Deporte · Junta de Andalucía</span></div>
+      </div>
+    </div>
+  </section>
+</div><!-- /view-home -->
+
+
+<!-- ══════════════════════════════════════
+     BLOQUE PEC
+══════════════════════════════════════ -->
+<div class="bloque-view" id="view-pec">
+  <div class="bloque-banner banner-pec">
+    <div class="bloque-banner-inner">
+      <div style="width:100%">
+        <span class="bloque-banner-back" onclick="showHome()">← Volver al inicio</span>
+        <div class="bloque-banner-sigla">PEC · Proyecto Educativo del Centro</div>
+        <h2>Proyecto Educativo</h2>
+        <p>Identidad pedagógica, objetivos propios, planes estratégicos y criterios de organización curricular y evaluación.</p>
+      </div>
+    </div>
+  </div>
+  <section class="caps-section">
+    <div class="caps-grid">
+      <div class="cap-card pec-card" onclick="showChapter('pec',0)">
+        <div class="cap-num">1</div>
+        <div class="cap-body"><h3>Contexto del Centro</h3><p>Características del entorno, datos del centro, alumnado y comunidad educativa de Mojácar.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',1)">
+        <div class="cap-num">2</div>
+        <div class="cap-body"><h3>Objetivos y Competencias Clave</h3><p>Objetivos propios del centro para el desarrollo de las ocho competencias clave LOMLOE.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',2)">
+        <div class="cap-num">3</div>
+        <div class="cap-body"><h3>Líneas Pedagógicas Generales</h3><p>Metodologías activas, enfoques de enseñanza-aprendizaje y señas de identidad pedagógica.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',3)">
+        <div class="cap-num">4</div>
+        <div class="cap-body"><h3>Coordinación Curricular</h3><p>Concreción de contenidos por etapas, coordinación de ciclos y equipos docentes.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',4)">
+        <div class="cap-num">5</div>
+        <div class="cap-body"><h3>Evaluación y Promoción</h3><p>Procedimientos, criterios de evaluación continua, calificación y criterios de promoción.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',5)">
+        <div class="cap-num">6</div>
+        <div class="cap-body"><h3>Atención a la Diversidad</h3><p>Medidas de atención al alumnado con NEAE, alumnado extranjero y altas capacidades.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',6)">
+        <div class="cap-num">7</div>
+        <div class="cap-body"><h3>Refuerzo y Recuperación</h3><p>Organización de actividades de refuerzo educativo y planes de recuperación de aprendizajes.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',7)">
+        <div class="cap-num">8</div>
+        <div class="cap-body"><h3>Plan de Orientación y Tutoría</h3><p>Acción tutorial, orientación personal, académica y vocacional. Coordinación con el EOE.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',8)">
+        <div class="cap-num">9</div>
+        <div class="cap-body"><h3>Planes Estratégicos</h3><p>Plan Digital, Plan Lector, Plan de Igualdad, proyectos de mejora y programas europeos.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',9)">
+        <div class="cap-num">10</div>
+        <div class="cap-body"><h3>Formación del Profesorado</h3><p>Plan de formación en centro, necesidades detectadas y líneas de mejora docente.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',10)">
+        <div class="cap-num">11</div>
+        <div class="cap-body"><h3>Organización del Tiempo Escolar</h3><p>Criterios para la distribución del tiempo, horarios generales y uso de espacios.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',11)">
+        <div class="cap-num">12</div>
+        <div class="cap-body"><h3>Evaluación Interna</h3><p>Procedimientos de autoevaluación, indicadores de calidad y mejora continua.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',12)">
+        <div class="cap-num">13</div>
+        <div class="cap-body"><h3>Agrupamientos y Tutorías</h3><p>Criterios pedagógicos para la asignación de tutorías y organización de grupos.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card pec-card" onclick="showChapter('pec',13)">
+        <div class="cap-num">14</div>
+        <div class="cap-body"><h3>Programaciones Didácticas</h3><p>Criterios para la elaboración, revisión y publicación de las programaciones por áreas.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOQUE ROF -->
+<div class="bloque-view" id="view-rof">
+  <div class="bloque-banner banner-rof">
+    <div class="bloque-banner-inner">
+      <div style="width:100%">
+        <span class="bloque-banner-back" onclick="showHome()">← Volver al inicio</span>
+        <div class="bloque-banner-sigla">ROF · Reglamento de Organización y Funcionamiento</div>
+        <h2>Reglamento de Organización y Funcionamiento</h2>
+        <p>Normas de convivencia, órganos de gobierno, derechos y deberes de la comunidad educativa y protocolos de actuación.</p>
+      </div>
+    </div>
+  </div>
+  <section class="caps-section">
+    <div class="caps-grid">
+      <div class="cap-card rof-card" onclick="showChapter('rof',0)">
+        <div class="cap-num">1</div>
+        <div class="cap-body"><h3>Plan de Convivencia</h3><p>Normas de convivencia, protocolos de actuación, mediación escolar y gestión positiva de conflictos.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+      <div class="cap-card rof-card" onclick="showChapter('rof',1)">
+        <div class="cap-num">2</div>
+        <div class="cap-body"><h3>Organización y Funcionamiento</h3><p>Estructura orgánica, órganos colegiados y unipersonales, normas de funcionamiento del centro.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOQUE GESTIÓN -->
+<div class="bloque-view" id="view-gest">
+  <div class="bloque-banner banner-gest">
+    <div class="bloque-banner-inner">
+      <div style="width:100%">
+        <span class="bloque-banner-back" onclick="showHome()">← Volver al inicio</span>
+        <div class="bloque-banner-sigla">PGCE · Proyecto de Gestión del Centro Educativo</div>
+        <h2>Proyecto de Gestión</h2>
+        <p>Criterios de gestión económica, uso de instalaciones, contratación de servicios y rendición de cuentas ante el Consejo Escolar.</p>
+      </div>
+    </div>
+  </div>
+  <section class="caps-section">
+    <div class="caps-grid">
+      <div class="cap-card gest-card" onclick="showChapter('gest',0)">
+        <div class="cap-num">1</div>
+        <div class="cap-body"><h3>Proyecto de Gestión</h3><p>Presupuesto anual, criterios de gasto, uso de instalaciones, contrataciones y transparencia.</p></div>
+        <span class="cap-arrow">→</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CAPÍTULOS — PEC
+══════════════════════════════════════ -->
+
+<!-- PEC-0: Contexto -->
+<div class="chapter-view" id="ch-pec-0">
+  <div class="chapter-topbar">
+    <div class="chapter-topbar-inner">
+      <button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button>
+      <span class="breadcrumb-sep">›</span>
+      <button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Cap. 1 · Contexto del Centro</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+      <div class="chapter-header">
+        <div class="chapter-num-big" style="background:var(--pec-color)">1</div>
+        <div class="chapter-header-text">
+          <h1>Contexto del Centro</h1>
+          <p class="ch-desc">Características del entorno, datos del centro, alumnado y comunidad educativa de Mojácar.</p>
+        </div>
+      </div>
+      <div class="chapter-content">
+        <h2 style="color:var(--pec-color)">1.1. Datos de Identificación</h2>
+        <div class="norma-list">
+          <div class="norma-item"><span class="norma-tag tag-pec">CENTRO</span><span><strong>Denominación:</strong> CEIP Bartolomé Flores</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">CÓDIGO</span><span>04001389</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">UBICACIÓN</span><span>Mojácar, Almería (Andalucía)</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">ETAPAS</span><span>Educación Infantil (2.º ciclo) y Educación Primaria</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">LÍNEAS</span><span>Centro de dos líneas por curso</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">TITULARIDAD</span><span>Pública · Consejería de Educación y Deporte, Junta de Andalucía</span></div>
+        </div>
+        <h2 style="color:var(--pec-color)">1.2. Entorno Socioeducativo</h2>
+        <p>El CEIP Bartolomé Flores se ubica en el municipio de Mojácar, localidad del litoral almeriense con una importante presencia de población extranjera residente, que alcanza aproximadamente el 40 % de la matrícula total del centro.</p>
+        <p>El entorno socioeconómico es de nivel medio-bajo, con familias que trabajan principalmente en el sector servicios, hostelería y agricultura. La actividad turística condiciona los ritmos familiares y la disponibilidad para la participación en la vida escolar.</p>
+        <div class="info-box info-box-pec"><strong>Dato significativo:</strong> La diversidad cultural y lingüística del alumnado —con presencia de familias procedentes de más de 15 países— constituye a la vez un reto pedagógico y un valor enriquecedor que impregna la identidad del centro.</div>
+        <h2 style="color:var(--pec-color)">1.3. Características del Alumnado</h2>
+        <ul>
+          <li>Alta diversidad cultural: familias españolas, británicas, alemanas, marroquíes, rumanas y latinoamericanas.</li>
+          <li>Presencia significativa de alumnado cuya lengua materna no es el español, lo que requiere medidas específicas de acogida e integración lingüística (Aula ATAL).</li>
+          <li>Porcentaje de alumnado con NEAE superior a la media provincial.</li>
+          <li>Alta rotación de matrícula a lo largo del curso por movimientos migratorios familiares.</li>
+        </ul>
+        <h2 style="color:var(--pec-color)">1.4. Recursos Humanos</h2>
+        <ul>
+          <li><strong>Equipo Directivo:</strong> Director/a, Jefe/a de Estudios y Secretario/a.</li>
+          <li><strong>Claustro:</strong> Tutores/as de Infantil y Primaria; especialistas en Inglés, Ed. Física, Música, Religión y A y L.</li>
+          <li><strong>Apoyo:</strong> PT, AL, ATAL.</li>
+          <li><strong>Orientación:</strong> EOE de zona.</li>
+          <li><strong>PAS:</strong> Personal de administración, conserje y limpieza.</li>
+        </ul>
+      </div>
+      <div class="chapter-nav">
+        <button class="ch-nav-btn disabled">← Anterior</button>
+        <button class="ch-nav-btn" onclick="showChapter('pec',1)">Cap. 2: Objetivos y Competencias →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PEC-1: Objetivos y Competencias -->
+<div class="chapter-view" id="ch-pec-1">
+  <div class="chapter-topbar">
+    <div class="chapter-topbar-inner">
+      <button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button>
+      <span class="breadcrumb-sep">›</span>
+      <button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Cap. 2 · Objetivos y Competencias Clave</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+      <div class="chapter-header">
+        <div class="chapter-num-big" style="background:var(--pec-color)">2</div>
+        <div class="chapter-header-text">
+          <h1>Objetivos Propios y Competencias Clave</h1>
+          <p class="ch-desc">Marco competencial LOMLOE y objetivos específicos del centro.</p>
+        </div>
+      </div>
+      <div class="chapter-content">
+        <h2 style="color:var(--pec-color)">2.1. Marco Normativo</h2>
+        <div class="norma-list">
+          <div class="norma-item"><span class="norma-tag tag-pec">LOMLOE</span><span>Ley Orgánica 3/2020, de 29 de diciembre, que modifica la LOE 2/2006</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">RD 157/2022</span><span>Currículo de Educación Primaria</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">RD 95/2022</span><span>Currículo de Educación Infantil</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">D 101/2023</span><span>Currículo Educación Primaria en Andalucía</span></div>
+          <div class="norma-item"><span class="norma-tag tag-pec">D 100/2023</span><span>Currículo Educación Infantil en Andalucía</span></div>
+        </div>
+        <h2 style="color:var(--pec-color)">2.2. Las Ocho Competencias Clave</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0 1.5rem;">
+          <span class="comp-chip">CCL – Comunicación Lingüística</span>
+          <span class="comp-chip">CP – Plurilingüe</span>
+          <span class="comp-chip">STEM – Ciencia y Tecnología</span>
+          <span class="comp-chip">CD – Digital</span>
+          <span class="comp-chip">CPSAA – Aprender a Aprender</span>
+          <span class="comp-chip">CC – Ciudadana</span>
+          <span class="comp-chip">CE – Emprendedora</span>
+          <span class="comp-chip">CCEC – Conciencia Cultural</span>
+        </div>
+        <h2 style="color:var(--pec-color)">2.3. Objetivos Generales del Centro</h2>
+        <div class="objetivo-item">
+          <div class="obj-id" style="color:var(--pec-color)">OG.1 — Desarrollo competencial integral</div>
+          <p>Garantizar el desarrollo pleno de las competencias clave en todo el alumnado, atendiendo a la diversidad y diferencias individuales para asegurar el éxito educativo.</p>
+          <span class="comp-chip" style="background:var(--acento)">Todas las competencias</span>
+        </div>
+        <div class="objetivo-item">
+          <div class="obj-id" style="color:var(--pec-color)">OG.2 — Comunicación en español</div>
+          <p>Impulsar el dominio de la competencia comunicativa en lengua española, con atención especial al alumnado de incorporación tardía a través del Aula ATAL.</p>
+          <span class="comp-chip">CCL</span><span class="comp-chip">CP</span>
+        </div>
+        <div class="objetivo-item">
+          <div class="obj-id" style="color:var(--pec-color)">OG.3 — Competencia digital</div>
+          <p>Desarrollar la competencia digital del alumnado mediante el uso seguro, crítico y creativo de las tecnologías en el marco del Plan de Transformación Digital Educativa.</p>
+          <span class="comp-chip">CD</span>
+        </div>
+        <div class="objetivo-item">
+          <div class="obj-id" style="color:var(--pec-color)">OG.4 — Convivencia e inclusión</div>
+          <p>Promover una convivencia escolar basada en el respeto, la empatía y la resolución pacífica de conflictos, fomentando la inclusión y la interculturalidad.</p>
+          <span class="comp-chip">CC</span><span class="comp-chip">CPSAA</span>
+        </div>
+        <div class="objetivo-item">
+          <div class="obj-id" style="color:var(--pec-color)">OG.5 — Sostenibilidad y ciudadanía global</div>
+          <p>Educar en la sostenibilidad y la responsabilidad ciudadana, en coherencia con los Objetivos de Desarrollo Sostenible (ODS 2030).</p>
+          <span class="comp-chip">CC</span><span class="comp-chip">STEM</span><span class="comp-chip">CCEC</span>
+        </div>
+        <h2 style="color:var(--pec-color)">2.4. Valores Fundamentales</h2>
+        <div class="valor-grid">
+          <div class="valor-item"><div class="valor-titulo">🌍 Inclusión</div><p>Igualdad de oportunidades para todo el alumnado.</p></div>
+          <div class="valor-item"><div class="valor-titulo">🤝 Interculturalidad</div><p>La diversidad cultural como riqueza.</p></div>
+          <div class="valor-item"><div class="valor-titulo">⚖️ Equidad</div><p>Eliminar desigualdades de origen.</p></div>
+          <div class="valor-item"><div class="valor-titulo">💬 Convivencia</div><p>Respeto y diálogo como base.</p></div>
+          <div class="valor-item"><div class="valor-titulo">🚀 Innovación</div><p>Metodologías activas y mejora continua.</p></div>
+          <div class="valor-item"><div class="valor-titulo">🌱 Sostenibilidad</div><p>Respeto al medio ambiente.</p></div>
+          <div class="valor-item"><div class="valor-titulo">♀♂ Igualdad</div><p>Eliminar estereotipos de género.</p></div>
+          <div class="valor-item"><div class="valor-titulo">✨ Creatividad</div><p>Imaginación y pensamiento divergente.</p></div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="ch-nav-btn" onclick="showChapter('pec',0)">← Cap. 1: Contexto</button>
+        <button class="ch-nav-btn" onclick="showChapter('pec',2)">Cap. 3: Líneas Pedagógicas →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PEC-2 a PEC-13: versiones compactas con navegación correcta -->
+
+<div class="chapter-view" id="ch-pec-2">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 3 · Líneas Pedagógicas</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">3</div><div class="chapter-header-text"><h1>Líneas Generales de Actuación Pedagógica</h1><p class="ch-desc">Principios metodológicos, enfoques de enseñanza y señas de identidad pedagógica del centro.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">3.1. Principios Metodológicos</h2>
+      <ul>
+        <li><strong>Aprendizaje significativo y funcional:</strong> Partir de los conocimientos previos del alumnado y conectar los aprendizajes con situaciones reales.</li>
+        <li><strong>Enfoque competencial:</strong> Orientar la enseñanza hacia las competencias clave mediante situaciones de aprendizaje contextualizadas.</li>
+        <li><strong>Atención a la diversidad:</strong> Adaptar la metodología a los diferentes ritmos, estilos y necesidades del alumnado.</li>
+        <li><strong>Aprendizaje cooperativo:</strong> Fomentar el trabajo en equipo y la construcción conjunta del conocimiento.</li>
+        <li><strong>Integración de las TIC:</strong> Incorporar las tecnologías digitales como herramienta de aprendizaje y comunicación.</li>
+        <li><strong>Evaluación formativa:</strong> Concebir la evaluación como proceso de mejora continua.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">3.2. Metodologías Prioritarias</h2>
+      <ul>
+        <li><strong>Aprendizaje Basado en Proyectos (ABP):</strong> Proyectos interdisciplinares en torno a situaciones-problema reales.</li>
+        <li><strong>Trabajo por rincones y talleres:</strong> Especialmente en Educación Infantil y 1.er ciclo de Primaria.</li>
+        <li><strong>Rutinas de pensamiento:</strong> Para desarrollar el pensamiento crítico y metacognitivo.</li>
+        <li><strong>Lectura compartida:</strong> 30 minutos diarios de lectura en Educación Primaria como tiempo no negociable.</li>
+        <li><strong>Flipped Classroom:</strong> Uso progresivo en ciclos superiores.</li>
+      </ul>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',1)">← Cap. 2</button><button class="ch-nav-btn" onclick="showChapter('pec',3)">Cap. 4 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-3">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 4 · Coordinación Curricular</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">4</div><div class="chapter-header-text"><h1>Coordinación y Concreción Curricular</h1><p class="ch-desc">Concreción de contenidos por etapas y coordinación de los equipos docentes.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">4.1. Estructura Curricular por Etapas</h2>
+      <p>El currículo del centro se organiza a partir de los Decretos 100/2023 y 101/2023 de Andalucía en el marco LOMLOE. En Educación Infantil, en torno a los tres ámbitos de experiencia. En Primaria, con situaciones de aprendizaje, criterios de evaluación, saberes básicos e indicadores de logro por ciclos.</p>
+      <h2 style="color:var(--pec-color)">4.2. Coordinación de Equipos Docentes</h2>
+      <ul>
+        <li><strong>Equipos de ciclo:</strong> Reunión quincenal. Coordinación de programaciones y análisis de resultados.</li>
+        <li><strong>Equipo de orientación:</strong> Coordinación semanal entre tutores/as, PT, AL y EOE.</li>
+        <li><strong>ETCP:</strong> Equipo Técnico de Coordinación Pedagógica, presidido por el director/a.</li>
+        <li><strong>Claustro:</strong> Reunión mensual ordinaria.</li>
+      </ul>
+      <div class="info-box info-box-pec"><strong>Criterio:</strong> El centro garantiza la progresión y coherencia vertical de los aprendizajes entre cursos y ciclos mediante instrumentos de seguimiento compartidos entre los equipos docentes.</div>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',2)">← Cap. 3</button><button class="ch-nav-btn" onclick="showChapter('pec',4)">Cap. 5 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-4">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 5 · Evaluación y Promoción</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">5</div><div class="chapter-header-text"><h1>Evaluación y Promoción del Alumnado</h1><p class="ch-desc">Procedimientos, criterios de calificación y decisiones sobre la promoción.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">5.1. Principios de la Evaluación</h2>
+      <p>La evaluación es continua, global, formativa e integradora, orientada al desarrollo competencial del alumnado y a la mejora del proceso de enseñanza-aprendizaje.</p>
+      <h2 style="color:var(--pec-color)">5.2. Tipos de Evaluación</h2>
+      <ul>
+        <li><strong>Inicial:</strong> Al comienzo de cada curso para detectar conocimientos previos.</li>
+        <li><strong>Continua:</strong> A lo largo de todo el proceso, con recogida sistemática de evidencias.</li>
+        <li><strong>Final de curso:</strong> Juicio global sobre el grado de adquisición de las competencias clave.</li>
+        <li><strong>Final de ciclo:</strong> Con carácter decisorio respecto a la promoción.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">5.3. Criterios de Promoción</h2>
+      <div class="info-box info-box-pec"><strong>Base normativa:</strong> Art. 20 LOE modificado por LOMLOE, Decreto 101/2023 y Orden de 30 de mayo de 2023.</div>
+      <p>Con carácter general el alumnado promociona al finalizar cada curso. La no promoción es excepcional, requiere informe motivado del equipo docente, audiencia de las familias e intervención del orientador/a. No se repetirá un curso por segunda vez sin haber aplicado todas las medidas de apoyo disponibles.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',3)">← Cap. 4</button><button class="ch-nav-btn" onclick="showChapter('pec',5)">Cap. 6 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-5">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 6 · Atención a la Diversidad</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">6</div><div class="chapter-header-text"><h1>Atención a la Diversidad</h1><p class="ch-desc">Medidas y actuaciones para la atención al alumnado con NEAE.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">6.1. Medidas Ordinarias</h2>
+      <ul>
+        <li><strong>Agrupamientos flexibles:</strong> Con carácter temporal para trabajar determinadas destrezas.</li>
+        <li><strong>Apoyo en grupos ordinarios:</strong> Presencia de un segundo docente en el aula.</li>
+        <li><strong>Adaptaciones de acceso al currículo.</strong></li>
+        <li><strong>Plan de Acción Tutorial:</strong> Seguimiento individualizado.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">6.2. Medidas Extraordinarias</h2>
+      <ul>
+        <li><strong>ACS:</strong> Adaptaciones Curriculares Significativas para alumnado con NEE.</li>
+        <li><strong>Aula ATAL:</strong> Apoyo lingüístico para alumnado extranjero sin español.</li>
+        <li><strong>Atención PT y AL:</strong> Intervención especializada.</li>
+        <li><strong>PEP:</strong> Programa Específico Personalizado para altas capacidades.</li>
+      </ul>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',4)">← Cap. 5</button><button class="ch-nav-btn" onclick="showChapter('pec',6)">Cap. 7 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-6">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 7 · Refuerzo y Recuperación</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">7</div><div class="chapter-header-text"><h1>Refuerzo y Recuperación de Aprendizajes</h1><p class="ch-desc">Organización del refuerzo educativo y planes de recuperación.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">7.1. Actuaciones de Refuerzo</h2>
+      <p>El refuerzo se organiza de forma preventiva, prioritariamente en Lengua Castellana y Matemáticas. Se desarrolla mediante apoyo dentro del aula, grupos específicos de refuerzo y actividades complementarias.</p>
+      <h2 style="color:var(--pec-color)">7.2. Planes de Recuperación</h2>
+      <p>Al inicio de cada curso el tutor/a elaborará un plan de recuperación para el alumnado que no superó los objetivos del curso anterior, con actividades específicas, recursos y calendario de seguimiento coordinado con las familias.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',5)">← Cap. 6</button><button class="ch-nav-btn" onclick="showChapter('pec',7)">Cap. 8 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-7">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 8 · Plan de Orientación y Tutoría</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">8</div><div class="chapter-header-text"><h1>Plan de Orientación y Acción Tutorial</h1><p class="ch-desc">Acción tutorial, orientación personal, académica y vocacional.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">8.1. Ámbitos de la Acción Tutorial</h2>
+      <ul>
+        <li><strong>Seguimiento académico individual</strong> y toma de decisiones de mejora.</li>
+        <li><strong>Orientación personal y emocional:</strong> Gestión emocional y habilidades sociales.</li>
+        <li><strong>Orientación a las familias:</strong> Reuniones grupales e individuales periódicas.</li>
+        <li><strong>Coordinación con el EOE:</strong> Derivación de casos y seguimiento de alumnado con NEAE.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">8.2. Plan de Acción Tutorial (PAT)</h2>
+      <p>El PAT establece las actuaciones tutoriales programadas por ciclo y nivel, su temporalización, recursos e indicadores de evaluación. Se revisa anualmente con el EOE y se aprueba en el ETCP.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',6)">← Cap. 7</button><button class="ch-nav-btn" onclick="showChapter('pec',8)">Cap. 9 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-8">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 9 · Planes Estratégicos</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">9</div><div class="chapter-header-text"><h1>Planes Estratégicos del Centro</h1><p class="ch-desc">Plan Digital, Plan Lector, Plan de Igualdad y proyectos específicos.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">9.1. Plan de Transformación Digital Educativa (PTDE)</h2>
+      <p>Decreto 179/2023. Integra la competencia digital docente (DigComp 2.2), el uso pedagógico de plataformas (iPasen, Moodle) y la formación en ciudadanía digital.</p>
+      <h2 style="color:var(--pec-color)">9.2. Plan Lector</h2>
+      <p>30 minutos diarios de lectura en Primaria. Coordinación de la biblioteca escolar y actividades de animación lectora con familias y entorno.</p>
+      <h2 style="color:var(--pec-color)">9.3. Plan de Igualdad</h2>
+      <p>Actuaciones transversales para eliminar estereotipos de género y promover relaciones de igualdad en toda la comunidad educativa.</p>
+      <h2 style="color:var(--pec-color)">9.4. Otros Programas</h2>
+      <ul>
+        <li>Huerto Escolar y Educación Ambiental.</li>
+        <li>Escuela: Espacio de Paz.</li>
+        <li>Erasmus+ y eTwinning.</li>
+        <li>Aprendizaje-Servicio (ApS).</li>
+      </ul>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',7)">← Cap. 8</button><button class="ch-nav-btn" onclick="showChapter('pec',9)">Cap. 10 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-9">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 10 · Formación del Profesorado</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">10</div><div class="chapter-header-text"><h1>Plan de Formación del Profesorado</h1><p class="ch-desc">Líneas prioritarias y modalidades de formación en centro.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">10.1. Líneas Prioritarias</h2>
+      <ul>
+        <li>Diseño de situaciones de aprendizaje competenciales (LOMLOE).</li>
+        <li>Evaluación formativa e instrumentos de evaluación por competencias.</li>
+        <li>Inclusión educativa y atención a la diversidad.</li>
+        <li>Competencia digital docente (DigComp 2.2).</li>
+        <li>Convivencia positiva y gestión de conflictos.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">10.2. Modalidades</h2>
+      <ul>
+        <li><strong>Formación en Centro (FOCO):</strong> Coordinada con el CEP de referencia.</li>
+        <li><strong>Cursos y jornadas del CEP</strong> en modalidad presencial y semipresencial.</li>
+        <li><strong>Grupos de trabajo</strong> para elaboración de materiales curriculares.</li>
+      </ul>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',8)">← Cap. 9</button><button class="ch-nav-btn" onclick="showChapter('pec',10)">Cap. 11 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-10">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 11 · Tiempo Escolar</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">11</div><div class="chapter-header-text"><h1>Organización del Tiempo Escolar</h1><p class="ch-desc">Criterios para la distribución del tiempo y uso de espacios.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">11.1. Criterios Generales</h2>
+      <ul>
+        <li>Las áreas instrumentales se impartirán en las primeras horas de la jornada.</li>
+        <li>30 minutos diarios de lectura en Educación Primaria, no negociables.</li>
+        <li>Los recreos garantizarán la seguridad y el juego inclusivo.</li>
+        <li>Los agrupamientos flexibles minimizarán el impacto en la coherencia del horario.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">11.2. Uso de Espacios</h2>
+      <p>Los espacios comunes (biblioteca, sala de informática, gimnasio, salón de actos, huerto escolar) se organizan mediante un cuadrante semanal elaborado por Jefatura de Estudios con criterios de equidad entre grupos.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',9)">← Cap. 10</button><button class="ch-nav-btn" onclick="showChapter('pec',11)">Cap. 12 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-11">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 12 · Evaluación Interna</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">12</div><div class="chapter-header-text"><h1>Evaluación Interna del Centro</h1><p class="ch-desc">Autoevaluación institucional, indicadores de calidad y mejora continua.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">12.1. El Proceso de Autoevaluación</h2>
+      <p>Anualmente se evalúan: resultados académicos, funcionamiento de órganos colegiados, calidad del proceso de enseñanza-aprendizaje y satisfacción de la comunidad educativa. Los resultados se recogen en la Memoria Anual y se traducen en propuestas de mejora incorporadas al Plan de Centro del curso siguiente.</p>
+      <div class="info-box info-box-pec"><strong>Instrumento:</strong> Indicadores homologados del sistema SENECA y cuestionarios estandarizados de la AGAEVE (Agencia Andaluza de Evaluación Educativa).</div>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',10)">← Cap. 11</button><button class="ch-nav-btn" onclick="showChapter('pec',12)">Cap. 13 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-12">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 13 · Agrupamientos y Tutorías</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">13</div><div class="chapter-header-text"><h1>Criterios de Agrupamientos y Tutorías</h1><p class="ch-desc">Criterios pedagógicos para la asignación de tutorías y organización de grupos.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">13.1. Asignación de Tutorías</h2>
+      <ul>
+        <li>Continuidad con el grupo en ciclos consecutivos siempre que sea pedagógicamente conveniente.</li>
+        <li>Adecuación del perfil docente a las características del grupo y las NEAE.</li>
+        <li>Distribución equitativa de grupos complejos entre profesorado experimentado y novel.</li>
+        <li>Coherencia con el proyecto del equipo de ciclo.</li>
+      </ul>
+      <h2 style="color:var(--pec-color)">13.2. Organización de Grupos</h2>
+      <p>Grupos heterogéneos al inicio del ciclo (diversidad de nivel, género y origen cultural). Los cambios de grupo durante el curso requieren informe del tutor/a y autorización del Equipo Directivo.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',11)">← Cap. 12</button><button class="ch-nav-btn" onclick="showChapter('pec',13)">Cap. 14 →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-pec-13">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-pec" onclick="showBloque('pec')">Proyecto Educativo</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 14 · Programaciones Didácticas</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--pec-color)">14</div><div class="chapter-header-text"><h1>Criterios para las Programaciones Didácticas</h1><p class="ch-desc">Elaboración, estructura mínima, revisión y publicación de programaciones.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--pec-color)">14.1. Estructura Mínima</h2>
+      <ul>
+        <li>Introducción y contextualización al grupo.</li>
+        <li>Competencias clave y perfil competencial de referencia.</li>
+        <li>Objetivos de etapa y área. Saberes básicos organizados por bloques.</li>
+        <li>Criterios de evaluación e instrumentos de calificación.</li>
+        <li>Situaciones de aprendizaje (mínimo tres por trimestre).</li>
+        <li>Medidas de atención a la diversidad.</li>
+        <li>Materiales, recursos y actividades complementarias.</li>
+      </ul>
+      <div class="info-box info-box-acento"><strong>Novedad LOMLOE:</strong> Las programaciones deben incorporar situaciones de aprendizaje con enfoque competencial y criterios de evaluación vinculados a los perfiles competenciales por ciclos (Decretos 100/2023 y 101/2023).</div>
+      <h2 style="color:var(--pec-color)">14.2. Revisión y Aprobación</h2>
+      <p>Las programaciones se elaboran en los equipos de ciclo, se revisan por el ETCP y se aprueban por el Claustro antes del 30 de octubre. Se publican en la web del centro para conocimiento de las familias.</p>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('pec',12)">← Cap. 13</button><button class="ch-nav-btn disabled">Fin del PEC ✓</button></div>
+  </div></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CAPÍTULOS — ROF
+══════════════════════════════════════ -->
+
+<div class="chapter-view" id="ch-rof-0">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-rof" onclick="showBloque('rof')">ROF</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 1 · Plan de Convivencia</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--rof-color)">1</div><div class="chapter-header-text"><h1>Plan de Convivencia</h1><p class="ch-desc">Normas, protocolos de actuación, mediación y gestión positiva de conflictos.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--rof-color)">1.1. Normas de Convivencia</h2>
+      <ul>
+        <li>Tratar con respeto a todas las personas de la comunidad educativa.</li>
+        <li>Respetar los materiales, instalaciones y espacios del centro.</li>
+        <li>Asistir con puntualidad y regularidad a las clases.</li>
+        <li>Resolver los conflictos mediante el diálogo, evitando la violencia física o verbal.</li>
+        <li>Respetar la diversidad cultural, religiosa, lingüística y de orientación afectivo-sexual.</li>
+      </ul>
+      <h2 style="color:var(--rof-color)">1.2. Protocolos de Actuación</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag tag-rof">ACOSO</span><span>Protocolo de detección e intervención ante situaciones de acoso escolar</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">MALTRATO</span><span>Protocolo ante indicadores de maltrato infantil y violencia en el entorno familiar</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">IGUALDAD</span><span>Protocolo ante acoso sexual y acoso por razón de sexo u orientación sexual</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">DIGITAL</span><span>Protocolo de uso responsable de dispositivos digitales y respuesta ante ciberacoso</span></div>
+      </div>
+      <h2 style="color:var(--rof-color)">1.3. Mediación Escolar</h2>
+      <p>El centro cuenta con un sistema de mediación escolar para la resolución alternativa de conflictos entre iguales, con la intervención de profesorado mediador y, en su caso, alumnado mediador formado a tal efecto.</p>
+      <div class="info-box info-box-rof"><strong>Principio rector:</strong> Toda medida correctora tiene carácter educativo y formativo. Su finalidad es la mejora de la convivencia y el desarrollo de la responsabilidad personal del alumnado.</div>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn disabled">← Anterior</button><button class="ch-nav-btn" onclick="showChapter('rof',1)">Cap. 2: Organización y Funcionamiento →</button></div>
+  </div></div>
+</div>
+
+<div class="chapter-view" id="ch-rof-1">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-rof" onclick="showBloque('rof')">ROF</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 2 · Organización y Funcionamiento</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--rof-color)">2</div><div class="chapter-header-text"><h1>Organización y Funcionamiento del Centro</h1><p class="ch-desc">Estructura orgánica, órganos de gobierno y normas de funcionamiento.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--rof-color)">2.1. Órganos Colegiados de Gobierno</h2>
+      <ul>
+        <li><strong>Consejo Escolar:</strong> Máximo órgano de participación de la comunidad educativa. Composición y competencias según Decreto 328/2010.</li>
+        <li><strong>Claustro de Profesorado:</strong> Órgano de participación del profesorado en la organización y gobierno del centro.</li>
+      </ul>
+      <h2 style="color:var(--rof-color)">2.2. Órganos Unipersonales</h2>
+      <ul>
+        <li><strong>Director/a:</strong> Representante de la Administración educativa y responsable de la gestión.</li>
+        <li><strong>Jefe/a de Estudios:</strong> Coordinación pedagógica y organización académica.</li>
+        <li><strong>Secretario/a:</strong> Gestión administrativa y económica.</li>
+      </ul>
+      <h2 style="color:var(--rof-color)">2.3. Órganos de Coordinación Docente</h2>
+      <ul>
+        <li><strong>ETCP:</strong> Equipo Técnico de Coordinación Pedagógica.</li>
+        <li><strong>Equipos de ciclo:</strong> Infantil, 1.er, 2.º y 3.er ciclo de Primaria.</li>
+        <li><strong>Equipos docentes de nivel.</strong></li>
+        <li><strong>Coordinadores/as:</strong> Igualdad, Biblioteca, Bienestar Digital, Formación en Centro.</li>
+      </ul>
+      <h2 style="color:var(--rof-color)">2.4. Normas de Funcionamiento</h2>
+      <div class="norma-list">
+        <div class="norma-item"><span class="norma-tag tag-rof">ENTRADAS</span><span>Acceso por puerta principal. Entrada acompañada hasta 1.er ciclo. Puntualidad obligatoria.</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">SALIDAS</span><span>Con adulto autorizado. Gestión de cambios a través de iPasen.</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">VISITAS</span><span>Acceso de familias con cita previa con el tutor/a. Registro obligatorio en conserjería.</span></div>
+        <div class="norma-item"><span class="norma-tag tag-rof">MÓVILES</span><span>Prohibición del uso de teléfonos móviles por el alumnado durante la jornada escolar.</span></div>
+      </div>
+      <div class="info-box info-box-rof"><strong>Base normativa:</strong> Decreto 328/2010, de 13 de julio, por el que se aprueba el Reglamento Orgánico de los CEIP de Andalucía. Instrucciones de inicio de curso vigentes.</div>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn" onclick="showChapter('rof',0)">← Cap. 1: Convivencia</button><button class="ch-nav-btn disabled">Fin del ROF ✓</button></div>
+  </div></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CAPÍTULOS — GESTIÓN
+══════════════════════════════════════ -->
+
+<div class="chapter-view" id="ch-gest-0">
+  <div class="chapter-topbar"><div class="chapter-topbar-inner"><button class="breadcrumb-btn bc-home" onclick="showHome()">Inicio</button><span class="breadcrumb-sep">›</span><button class="breadcrumb-btn bc-gest" onclick="showBloque('gest')">Proyecto de Gestión</button><span class="breadcrumb-sep">›</span><span class="breadcrumb-current">Cap. 1 · Proyecto de Gestión</span></div></div>
+  <div class="chapter-body"><div class="chapter-body-inner">
+    <div class="chapter-header"><div class="chapter-num-big" style="background:var(--gest-color)">1</div><div class="chapter-header-text"><h1>Proyecto de Gestión del Centro</h1><p class="ch-desc">Gestión económica, instalaciones, contrataciones y rendición de cuentas.</p></div></div>
+    <div class="chapter-content">
+      <h2 style="color:var(--gest-color)">1.1. Gestión Económica</h2>
+      <ul>
+        <li><strong>Presupuesto anual:</strong> Elaborado por el secretario/a, presentado al Consejo Escolar y aprobado antes del 31 de octubre.</li>
+        <li><strong>Criterios de distribución:</strong> Prioridad a materiales curriculares, mantenimiento de instalaciones y actividades complementarias.</li>
+        <li><strong>Control y seguimiento:</strong> El Consejo Escolar aprueba la liquidación del presupuesto al final de cada curso.</li>
+      </ul>
+      <h2 style="color:var(--gest-color)">1.2. Uso y Mantenimiento de Instalaciones</h2>
+      <p>El centro establece normas para el uso ordenado de sus instalaciones y recursos materiales, garantizando el mantenimiento preventivo y la gestión responsable del patrimonio público.</p>
+      <h2 style="color:var(--gest-color)">1.3. Contratación de Servicios</h2>
+      <p>Cualquier contratación se realizará de acuerdo con la normativa de contratos del sector público y con los criterios aprobados por el Consejo Escolar, garantizando la transparencia y eficiencia en el uso de recursos públicos.</p>
+      <h2 style="color:var(--gest-color)">1.4. Actividades Complementarias y Extraescolares</h2>
+      <p>Su organización y financiación se rige por los criterios pedagógicos y económicos del Proyecto de Gestión, con aprobación previa del Consejo Escolar y criterios de equidad para garantizar la participación de todo el alumnado.</p>
+      <div class="info-box info-box-gest"><strong>Transparencia:</strong> El Proyecto de Gestión y la liquidación del presupuesto se publican en el tablón de anuncios del centro y se ponen a disposición de toda la comunidad educativa.</div>
+    </div>
+    <div class="chapter-nav"><button class="ch-nav-btn disabled">← Anterior</button><button class="ch-nav-btn disabled">Fin del Proyecto de Gestión ✓</button></div>
+  </div></div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Plan de Centro · CEIP Bartolomé Flores</h4>
+      <p>Versión consolidada 2011–2025. Actualizado con la normativa LOMLOE vigente: Decretos 100/2023 y 101/2023 de la Junta de Andalucía.</p>
+      <p style="margin-top:.65rem;">Aprobado por el Consejo Escolar · Mojácar, Almería · Código: 04001389</p>
+    </div>
+    <div>
+      <h4>Documentos</h4>
+      <ul>
+        <li><a href="#">Proyecto Educativo (PEC)</a></li>
+        <li><a href="#">ROF</a></li>
+        <li><a href="#">Proyecto de Gestión</a></li>
+        <li><a href="#">Plan de Convivencia</a></li>
+        <li><a href="#">Actas de aprobación</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Normativa</h4>
+      <ul>
+        <li><a href="#">LOMLOE (LO 3/2020)</a></li>
+        <li><a href="#">Decreto 328/2010</a></li>
+        <li><a href="#">Decreto 101/2023 EP</a></li>
+        <li><a href="#">Decreto 100/2023 EI</a></li>
+        <li><a href="#">Instrucciones 2024-25</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CEIP Bartolomé Flores · Mojácar (Almería) · Consejería de Educación y Deporte, Junta de Andalucía</span>
+    <span>Código de centro: 04001389</span>
+  </div>
+</footer>
+
+
+<script>
+  // ── Estado ──
+  let currentBloque = null;
+  let currentChapter = null;
+
+  function hideAll() {
+    document.getElementById('view-home').style.display = 'none';
+    ['pec','rof','gest'].forEach(b => {
+      document.getElementById('view-'+b).classList.remove('active');
+      document.getElementById('navbtn-'+b).classList.remove('active');
+    });
+    document.querySelectorAll('.chapter-view').forEach(el => el.classList.remove('active'));
+  }
+
+  function showHome() {
+    hideAll();
+    document.getElementById('view-home').style.display = 'block';
+    currentBloque = null; currentChapter = null;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showBloque(bloque) {
+    hideAll();
+    document.getElementById('view-'+bloque).classList.add('active');
+    document.getElementById('navbtn-'+bloque).classList.add('active');
+    currentBloque = bloque; currentChapter = null;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showChapter(bloque, idx) {
+    hideAll();
+    const el = document.getElementById('ch-'+bloque+'-'+idx);
+    if (el) {
+      el.classList.add('active');
+      document.getElementById('navbtn-'+bloque).classList.add('active');
+    }
+    currentBloque = bloque; currentChapter = idx;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Estado inicial
+  showHome();
+</script>
+</body>
+</html>
