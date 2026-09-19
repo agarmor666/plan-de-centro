@@ -570,9 +570,38 @@
   @media (max-width: 640px) {
     .nav-bloques { display: none; }
   }
+
+  body.gate-locked { overflow: hidden; }
+  .construction-gate { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; padding:22px; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1a5c38 100%); }
+  .construction-gate[hidden] { display:none; }
+  .construction-card { width:min(520px,100%); padding:38px 32px; border-radius:24px; background:#fff; text-align:center; box-shadow:0 28px 80px #0006; }
+  .construction-icon { font-size:4rem; line-height:1; margin-bottom:14px; }
+  .construction-card h1 { font-family:var(--font-display); color:var(--verde); font-size:clamp(2rem,7vw,3.1rem); margin:0 0 10px; }
+  .construction-card p { color:var(--texto-suave); margin:0 0 22px; }
+  .construction-card label { display:block; text-align:left; font-weight:700; color:var(--texto); margin-bottom:7px; }
+  .construction-card input { width:100%; padding:13px 14px; border:1px solid var(--gris-borde); border-radius:10px; font:inherit; margin-bottom:11px; }
+  .construction-card button { width:100%; border:0; border-radius:10px; padding:13px; background:var(--verde); color:#fff; font:inherit; font-weight:800; cursor:pointer; }
+  .construction-card button:hover { background:var(--verde-medio); }
+  .construction-error { min-height:24px; margin:9px 0 0!important; color:#b91c1c!important; font-size:.86rem; font-weight:700; }
+  .construction-home { display:inline-block; margin-top:15px; color:var(--verde); font-weight:700; text-decoration:none; }
+
 </style>
 </head>
-<body>
+<body class="gate-locked">
+
+<div id="constructionGate" class="construction-gate" role="dialog" aria-modal="true" aria-labelledby="constructionTitle">
+  <section class="construction-card">
+    <div class="construction-icon">🚧</div>
+    <h1 id="constructionTitle">EN CONSTRUCCIÓN</h1>
+    <p>El portal del Plan de Centro se encuentra en preparación. Introduce la contraseña para acceder a la versión de trabajo.</p>
+    <label for="constructionPassword">Contraseña</label>
+    <input id="constructionPassword" type="password" autocomplete="current-password" placeholder="Introducir contraseña">
+    <button id="constructionAccess" type="button">Acceder</button>
+    <p id="constructionError" class="construction-error" aria-live="polite"></p>
+    <a class="construction-home" href="https://agarmor666.github.io/Horarios-26-27/">← Volver al portal principal</a>
+  </section>
+</div>
+
 
 <!-- ══════════════════════════════════════
      TOP NAV
@@ -1450,5 +1479,35 @@
   // Estado inicial
   showHome();
 </script>
+
+<script>
+(function(){
+  const expected='b2ea78d9e384bd2f80055206244f23915484a1c6c77746debafcd3f88d1b4b41';
+  const gate=document.getElementById('constructionGate');
+  const input=document.getElementById('constructionPassword');
+  const error=document.getElementById('constructionError');
+  async function digest(value){
+    const bytes=new TextEncoder().encode(value);
+    const hash=await crypto.subtle.digest('SHA-256',bytes);
+    return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  function openPortal(){
+    sessionStorage.setItem('plan-centro-access','ok');
+    gate.hidden=true;
+    document.body.classList.remove('gate-locked');
+  }
+  async function checkAccess(){
+    error.textContent='';
+    if(await digest(input.value)===expected){openPortal();return}
+    error.textContent='Contraseña incorrecta.';
+    input.select();
+  }
+  if(sessionStorage.getItem('plan-centro-access')==='ok')openPortal();
+  document.getElementById('constructionAccess').addEventListener('click',checkAccess);
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')checkAccess()});
+  setTimeout(()=>input.focus(),50);
+})();
+</script>
+
 </body>
 </html>
