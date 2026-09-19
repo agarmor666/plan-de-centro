@@ -116,6 +116,14 @@
     border-color: var(--gest-color);
   }
 
+
+  .school-brand-right { display:flex; align-items:center; gap:.65rem; flex-shrink:0; }
+  .school-brand-text { text-align:right; line-height:1.12; }
+  .school-brand-text strong { display:block; color:var(--verde); font-family:var(--font-display); font-size:.9rem; }
+  .school-brand-text span { display:block; color:var(--texto-suave); font-size:.72rem; margin-top:3px; }
+  .school-crest { width:48px; height:48px; flex:0 0 48px; }
+  .school-crest svg { display:block; width:100%; height:100%; }
+
   /* Enlace inicio */
   .nav-inicio-link {
     font-size: 0.82rem; font-weight: 500;
@@ -565,10 +573,15 @@
     .nav-bloques { gap: 0.1rem; }
     .nav-bloque-btn { font-size: 0.78rem; padding: 0.4rem 0.7rem; }
     .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+    .school-brand-text { display:none; }
     .chapter-nav { flex-direction: column; }
   }
   @media (max-width: 640px) {
     .nav-bloques { display: none; }
+    .topnav-inner { padding:0 .75rem; gap:.6rem; }
+    .school-brand-text { display:block; }
+    .school-brand-text strong { font-size:.75rem; }
+    .school-crest { width:42px; height:42px; flex-basis:42px; }
   }
 
   body.gate-locked { overflow: hidden; }
@@ -654,6 +667,27 @@
         </button>
       </li>
     </ul>
+
+
+    <div class="school-brand-right" aria-label="CEIP Bartolomé Flores, Mojácar">
+      <div class="school-brand-text">
+        <strong>CEIP Bartolomé Flores</strong>
+        <span>Mojácar</span>
+      </div>
+      <div class="school-crest" aria-hidden="true">
+        <svg viewBox="0 0 100 100" role="img">
+          <circle cx="50" cy="50" r="46" fill="#fff" stroke="#1a5c38" stroke-width="5"/>
+          <circle cx="50" cy="50" r="37" fill="#e8f4ed" stroke="#2d7a50" stroke-width="2"/>
+          <path d="M23 61 Q35 50 46 59 T77 57" fill="none" stroke="#1a5c38" stroke-width="5" stroke-linecap="round"/>
+          <path d="M28 69 Q39 62 50 69 T72 68" fill="none" stroke="#2d7a50" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="67" cy="32" r="7" fill="#c8832a"/>
+          <path d="M35 43 L50 28 L61 43 Z" fill="#1a5c38"/>
+          <path d="M42 45 L50 37 L57 45 V58 H42 Z" fill="#fff" stroke="#1a5c38" stroke-width="2"/>
+          <text x="50" y="87" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#1a5c38">MOJÁCAR</text>
+        </svg>
+      </div>
+    </div>
+
 
     <a class="nav-inicio-link" onclick="showHome()">Inicio</a>
 
