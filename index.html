@@ -578,7 +578,12 @@
   .construction-card { width:min(520px,100%); padding:38px 32px; border-radius:24px; background:#fff; text-align:center; box-shadow:0 28px 80px #0006; }
   .construction-icon { font-size:4rem; line-height:1; margin-bottom:14px; }
   .construction-card h1 { font-family:var(--font-display); color:var(--verde); font-size:clamp(2rem,7vw,3.1rem); margin:0 0 10px; }
-  .construction-card p { color:var(--texto-suave); margin:0 0 22px; }
+  .construction-card p { color:var(--texto-suave); margin:0 0 18px; }
+  .construction-info { margin:0 0 22px; padding:16px; border-radius:14px; background:var(--verde-claro); border:1px solid #c8dfd2; text-align:left; }
+  .construction-info h2 { font-family:var(--font-display); color:var(--verde); font-size:1.35rem; margin:0 0 7px; }
+  .construction-info p { margin:0 0 11px; font-size:.9rem; line-height:1.5; }
+  .construction-meta { display:grid; grid-template-columns:1fr 1fr; gap:7px 12px; color:var(--texto-suave); font-size:.82rem; }
+  @media(max-width:520px){.construction-meta{grid-template-columns:1fr}.construction-card{padding:28px 22px}}
   .construction-card label { display:block; text-align:left; font-weight:700; color:var(--texto); margin-bottom:7px; }
   .construction-card input { width:100%; padding:13px 14px; border:1px solid var(--gris-borde); border-radius:10px; font:inherit; margin-bottom:11px; }
   .construction-card button { width:100%; border:0; border-radius:10px; padding:13px; background:var(--verde); color:#fff; font:inherit; font-weight:800; cursor:pointer; }
@@ -594,7 +599,17 @@
   <section class="construction-card">
     <div class="construction-icon">🚧</div>
     <h1 id="constructionTitle">EN CONSTRUCCIÓN</h1>
-    <p>El portal del Plan de Centro se encuentra en preparación. Introduce la contraseña para acceder a la versión de trabajo.</p>
+    <p>El portal se encuentra en preparación. Introduce la contraseña para acceder a la versión de trabajo.</p>
+    <div class="construction-info">
+      <h2>Plan de Centro · CEIP Bartolomé Flores</h2>
+      <p>Documento institucional que integra el Proyecto Educativo, el Reglamento de Organización y Funcionamiento y el Proyecto de Gestión del centro.</p>
+      <div class="construction-meta">
+        <span>📍 Mojácar, Almería</span>
+        <span>🏫 Código: 04001389</span>
+        <span>📅 Curso 2026/27</span>
+        <span>📘 Versión de trabajo</span>
+      </div>
+    </div>
     <label for="constructionPassword">Contraseña</label>
     <input id="constructionPassword" type="password" autocomplete="current-password" placeholder="Introducir contraseña">
     <button id="constructionAccess" type="button">Acceder</button>
