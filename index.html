@@ -572,7 +572,8 @@
   }
 
   body.gate-locked { overflow: hidden; }
-  .construction-gate { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; padding:22px; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1a5c38 100%); }
+  body.gate-locked .nav-bloques, body.gate-locked .nav-inicio-link { visibility:hidden; }
+  .construction-gate { position:fixed; top:64px; right:0; bottom:0; left:0; z-index:150; display:flex; align-items:center; justify-content:center; padding:22px; background:linear-gradient(135deg,#e8f4ed 0%,#f6f9f7 55%,#d7ebdf 100%); }
   .construction-gate[hidden] { display:none; }
   .construction-card { width:min(520px,100%); padding:38px 32px; border-radius:24px; background:#fff; text-align:center; box-shadow:0 28px 80px #0006; }
   .construction-icon { font-size:4rem; line-height:1; margin-bottom:14px; }
